@@ -1,0 +1,63 @@
+# docker-compose.yml (Base configuration)
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: wedding-app
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=sqlite:///data/wedding.db
+    volumes:
+      - ./app:/app/app:ro          # Mount app code as read-only
+      - wedding_data:/app/data     # Persistent data volume
+      - wedding_logs:/app/logs     # Logs volume
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - wedding-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: wedding-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./app/static:/app/static:ro
+      - ./docker/nginx/ssl:/etc/nginx/ssl:ro
+      - certbot_www:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+    depends_on:
+      - app
+    networks:
+      - wedding-network
+
+  certbot:
+    image: certbot/certbot
+    container_name: wedding-certbot
+    volumes:
+      - certbot_www:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+volumes:
+  wedding_data:
+  wedding_logs:
+  certbot_www:
+  certbot_conf:
+
+networks:
+  wedding-network:
+    driver: bridge

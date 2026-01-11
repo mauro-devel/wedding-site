@@ -1,0 +1,29 @@
+# docker-compose.override.yml (Development)
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev  # Optional: Development Dockerfile
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    volumes:
+      - ./app:/app/app             # Mount as read-write for hot reload
+      - ./requirements.txt:/app/requirements.txt
+    ports:
+      - "5000:5000"                # Expose dev port
+    command: python -m flask run --host=0.0.0.0 --port=5000
+    develop:                       # Watch for changes (Docker Compose v2.17+)
+      watch:
+        - action: sync
+          path: ./app
+          target: /app/app
+        - action: rebuild
+          path: requirements.txt
+
+  nginx:
+    ports:
+      - "8080:80"                  # Different port for dev
+    # Disable SSL in dev
