@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Website</title>
+  <script src="/_sdk/data_sdk.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .serif-font {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .hero-gradient {
+      background: linear-gradient(135deg, #fdf4f5 0%, #ffeef0 50%, #fff5f7 100%);
+    }
+    
+    .section-transition {
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link {
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .nav-link:hover {
+      color: #d97777;
+    }
+    
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(217, 119, 119, 0.3);
+    }
+    
+    .countdown-box {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+    
+    .countdown-box:hover {
+      transform: scale(1.05);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+    
+    .radio-custom:checked + label {
+      background-color: #d97777;
+      color: white;
+      border-color: #d97777;
+    }
+
+    .checkbox-custom:checked + label {
+      background-color: #d97777;
+      color: white;
+      border-color: #d97777;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full">
+  <div id="app" class="h-full w-full overflow-auto"><!-- Navigation -->
+   <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+     <div class="flex justify-between items-center">
+      <div class="serif-font text-2xl font-bold text-rose-600"><span id="nav-bride">Sofia</span> &amp; <span id="nav-groom">Miguel</span>
+      </div>
+      <div class="hidden md:flex space-x-6 text-sm"><a onclick="scrollToSection('home')" class="nav-link text-gray-700" id="nav-home">Home</a> <a onclick="scrollToSection('details')" class="nav-link text-gray-700" id="nav-details">Details</a> <a onclick="scrollToSection('rsvp')" class="nav-link text-gray-700" id="nav-rsvp">RSVP</a> <a onclick="scrollToSection('gifts')" class="nav-link text-gray-700" id="nav-gifts">Gifts</a>
+      </div>
+      <div class="flex items-center space-x-3"><button onclick="changeLanguage('en')" class="px-3 py-1 text-sm rounded-full border-2 border-gray-300 hover:border-rose-400 transition" id="lang-en">EN</button> <button onclick="changeLanguage('pt')" class="px-3 py-1 text-sm rounded-full border-2 border-gray-300 hover:border-rose-400 transition" id="lang-pt">PT</button> <button onclick="changeLanguage('es')" class="px-3 py-1 text-sm rounded-full border-2 border-gray-300 hover:border-rose-400 transition" id="lang-es">ES</button>
+      </div>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="hero-gradient min-h-screen flex items-center justify-center pt-20 px-6 fade-in">
+    <div class="text-center max-w-4xl">
+     <h1 class="serif-font text-7xl md:text-8xl font-bold text-gray-800 mb-4"><span id="hero-bride">Sofia</span> &amp; <span id="hero-groom">Miguel</span></h1>
+     <p class="text-2xl text-gray-600 mb-8" id="hero-subtitle">We're getting married!</p>
+     <p class="text-xl text-gray-700 mb-12" id="hero-date">June 15, 2025</p><!-- Countdown -->
+     <div class="grid grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
+      <div class="countdown-box rounded-lg p-6 shadow-lg">
+       <div id="days" class="serif-font text-4xl font-bold text-rose-600">
+        --
+       </div>
+       <div class="text-sm text-gray-600 mt-2" id="label-days">
+        Days
+       </div>
+      </div>
+      <div class="countdown-box rounded-lg p-6 shadow-lg">
+       <div id="hours" class="serif-font text-4xl font-bold text-rose-600">
+        --
+       </div>
+       <div class="text-sm text-gray-600 mt-2" id="label-hours">
+        Hours
+       </div>
+      </div>
+      <div class="countdown-box rounded-lg p-6 shadow-lg">
+       <div id="minutes" class="serif-font text-4xl font-bold text-rose-600">
+        --
+       </div>
+       <div class="text-sm text-gray-600 mt-2" id="label-minutes">
+        Minutes
+       </div>
+      </div>
+      <div class="countdown-box rounded-lg p-6 shadow-lg">
+       <div id="seconds" class="serif-font text-4xl font-bold text-rose-600">
+        --
+       </div>
+       <div class="text-sm text-gray-600 mt-2" id="label-seconds">
+        Seconds
+       </div>
+      </div>
+     </div><button onclick="scrollToSection('rsvp')" class="btn-primary bg-rose-500 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg" id="btn-rsvp-hero"> RSVP Now </button>
+    </div>
+   </section><!-- Wedding Details Section -->
+   <section id="details" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="serif-font text-5xl font-bold text-center text-gray-800 mb-4" id="section-details-title">Wedding Details</h2>
+     <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto" id="section-details-subtitle">Join us for a day of love and celebration</p>
+     <div class="grid md:grid-cols-2 gap-8 mb-12"><!-- Ceremony Card -->
+      <div class="card-hover bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 shadow-lg">
+       <div class="text-center mb-6">
+        <div class="text-5xl mb-4">
+         💒
+        </div>
+        <h3 class="serif-font text-3xl font-bold text-gray-800 mb-2" id="ceremony-title">Ceremony</h3>
+       </div>
+       <div class="space-y-3 text-gray-700">
+        <p><span class="font-semibold" id="ceremony-venue-label">Venue:</span> <span id="ceremony-venue-value">Santa Maria Chapel</span></p>
+        <p><span class="font-semibold" id="ceremony-time-label">Time:</span> <span id="ceremony-time-value">4:00 PM</span></p>
+       </div>
+      </div><!-- Reception Card -->
+      <div class="card-hover bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 shadow-lg">
+       <div class="text-center mb-6">
+        <div class="text-5xl mb-4">
+         🥂
+        </div>
+        <h3 class="serif-font text-3xl font-bold text-gray-800 mb-2" id="reception-title">Reception</h3>
+       </div>
+       <div class="space-y-3 text-gray-700">
+        <p><span class="font-semibold" id="reception-venue-label">Venue:</span> <span id="reception-venue-value">Villa Rosa Gardens</span></p>
+        <p><span class="font-semibold" id="reception-address-label">Address:</span> <span id="reception-address-value">123 Garden Street, Lisbon</span></p>
+       </div>
+      </div>
+     </div><!-- Event Timeline -->
+     <div class="mb-12">
+      <div class="card-hover bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 shadow-lg">
+       <div class="text-center mb-8">
+        <div class="text-5xl mb-4">
+         ⏰
+        </div>
+        <h3 class="serif-font text-3xl font-bold text-gray-800 mb-2" id="timeline-title">Event Timeline</h3>
+       </div>
+       <div class="space-y-4 max-w-2xl mx-auto">
+        <div class="flex items-start">
+         <div class="w-24 font-semibold text-purple-600" id="timeline-time-1">
+          4:00 PM
+         </div>
+         <div class="flex-1 text-gray-700">
+          <span id="timeline-event-1">Ceremony Begins</span>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div class="w-24 font-semibold text-purple-600" id="timeline-time-2">
+          5:00 PM
+         </div>
+         <div class="flex-1 text-gray-700">
+          <span id="timeline-event-2">Cocktail Hour</span>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div class="w-24 font-semibold text-purple-600" id="timeline-time-3">
+          6:30 PM
+         </div>
+         <div class="flex-1 text-gray-700">
+          <span id="timeline-event-3">Reception &amp; Dinner</span>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div class="w-24 font-semibold text-purple-600" id="timeline-time-4">
+          8:00 PM
+         </div>
+         <div class="flex-1 text-gray-700">
+          <span id="timeline-event-4">First Dance &amp; Party</span>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div class="w-24 font-semibold text-purple-600" id="timeline-time-5">
+          12:00 AM
+         </div>
+         <div class="flex-1 text-gray-700">
+          <span id="timeline-event-5">Event Ends</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8"><!-- Dress Code -->
+      <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 shadow-lg">
+       <div class="text-center mb-6">
+        <div class="text-5xl mb-4">
+         👔
+        </div>
+        <h3 class="serif-font text-3xl font-bold text-gray-800 mb-4" id="dresscode-title">Dress Code</h3>
+       </div>
+       <div class="text-center text-gray-700">
+        <p class="text-xl font-semibold mb-2" id="dresscode-value">Formal / Black Tie Optional</p>
+        <p class="text-sm" id="dresscode-description">Elegant evening attire requested</p>
+       </div>
+      </div><!-- Menu -->
+      <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg">
+       <div class="text-center mb-6">
+        <div class="text-5xl mb-4">
+         🍽️
+        </div>
+        <h3 class="serif-font text-3xl font-bold text-gray-800 mb-4" id="menu-title">Menu Options</h3>
+       </div>
+       <div class="space-y-2 text-gray-700">
+        <p class="text-sm"><span class="font-semibold" id="menu-option-1-label">Chicken:</span> <span id="menu-option-1">Herb-Roasted Chicken</span></p>
+        <p class="text-sm"><span class="font-semibold" id="menu-option-2-label">Fish:</span> <span id="menu-option-2">Grilled Salmon</span></p>
+        <p class="text-sm"><span class="font-semibold" id="menu-option-3-label">Vegetarian:</span> <span id="menu-option-3">Vegetarian Risotto</span></p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- RSVP Section -->
+   <section id="rsvp" class="py-20 px-6 bg-gradient-to-br from-rose-50 to-pink-50">
+    <div class="max-w-3xl mx-auto">
+     <h2 class="serif-font text-5xl font-bold text-center text-gray-800 mb-4" id="section-rsvp-title">RSVP</h2>
+     <p class="text-center text-gray-600 mb-12" id="section-rsvp-subtitle">Please let us know if you can join us</p>
+     <form id="rsvp-form" class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+      <div class="space-y-6"><!-- Name -->
+       <div><label for="guest-name" class="block text-sm font-semibold text-gray-700 mb-2" id="label-name">Full Name</label> <input type="text" id="guest-name" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-rose-400 focus:outline-none transition">
+       </div><!-- Email -->
+       <div><label for="guest-email" class="block text-sm font-semibold text-gray-700 mb-2" id="label-email">Email</label> <input type="email" id="guest-email" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-rose-400 focus:outline-none transition">
+       </div><!-- Attending -->
+       <div><label class="block text-sm font-semibold text-gray-700 mb-3" id="label-attending">Will you be attending?</label>
+        <div class="flex space-x-4">
+         <div><input type="radio" id="attending-yes" name="attending" value="yes" class="radio-custom hidden" required> <label for="attending-yes" class="px-6 py-3 border-2 border-gray-300 rounded-lg cursor-pointer inline-block transition" id="label-yes">Yes</label>
+         </div>
+         <div><input type="radio" id="attending-no" name="attending" value="no" class="radio-custom hidden"> <label for="attending-no" class="px-6 py-3 border-2 border-gray-300 rounded-lg cursor-pointer inline-block transition" id="label-no">No</label>
+         </div>
+        </div>
+       </div><!-- Number of Guests -->
+       <div id="additional-fields" style="display: none;">
+        <div class="mb-6"><label for="num-guests" class="block text-sm font-semibold text-gray-700 mb-2" id="label-guests">Number of Guests</label> <input type="number" id="num-guests" min="1" max="5" value="1" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-rose-400 focus:outline-none transition">
+        </div><!-- Menu Choice -->
+        <div class="mb-6"><label class="block text-sm font-semibold text-gray-700 mb-3" id="label-menu">Menu Choice</label>
+         <div class="space-y-3">
+          <div><input type="radio" id="menu-chicken" name="menu" value="chicken" class="radio-custom hidden" required> <label for="menu-chicken" class="px-6 py-3 border-2 border-gray-300 rounded-lg cursor-pointer block transition" id="label-chicken">Herb-Roasted Chicken</label>
+          </div>
+          <div><input type="radio" id="menu-fish" name="menu" value="fish" class="radio-custom hidden"> <label for="menu-fish" class="px-6 py-3 border-2 border-gray-300 rounded-lg cursor-pointer block transition" id="label-fish">Grilled Salmon</label>
+          </div>
+          <div><input type="radio" id="menu-vegetarian" name="menu" value="vegetarian" class="radio-custom hidden"> <label for="menu-vegetarian" class="px-6 py-3 border-2 border-gray-300 rounded-lg cursor-pointer block transition" id="label-vegetarian">Vegetarian Risotto</label>
+          </div>
+         </div>
+        </div><!-- Dietary Preferences -->
+        <div class="mb-6"><label class="block text-sm font-semibold text-gray-700 mb-3" id="label-dietary-prefs">Dietary Preferences</label>
+         <div class="space-y-2 mb-4">
+          <div><input type="checkbox" id="is-vegetarian" class="checkbox-custom hidden"> <label for="is-vegetarian" class="px-4 py-2 border-2 border-gray-300 rounded-lg cursor-pointer inline-block text-sm transition" id="label-is-vegetarian">I'm Vegetarian</label>
+          </div>
+          <div><input type="checkbox" id="has-allergies" class="checkbox-custom hidden"> <label for="has-allergies" class="px-4 py-2 border-2 border-gray-300 rounded-lg cursor-pointer inline-block text-sm transition" id="label-has-allergies">I have food allergies/intolerances</label>
+          </div>
+         </div>
+        </div><!-- Allergy Details -->
+        <div id="allergy-details-section" class="mb-6" style="display: none;"><label for="allergy-details" class="block text-sm font-semibold text-gray-700 mb-2" id="label-allergy-details">Please specify your allergies or intolerances</label> <textarea id="allergy-details" rows="2" placeholder="e.g., nuts, gluten, lactose..." class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-rose-400 focus:outline-none transition"></textarea>
+        </div><!-- Additional Dietary Restrictions -->
+        <div class="mb-6"><label for="dietary" class="block text-sm font-semibold text-gray-700 mb-2" id="label-dietary">Other Dietary Requirements</label> <textarea id="dietary" rows="2" placeholder="Any other special requests..." class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-rose-400 focus:outline-none transition"></textarea>
+        </div>
+       </div><!-- Message -->
+       <div><label for="message" class="block text-sm font-semibold text-gray-700 mb-2" id="label-message">Message for the Couple (Optional)</label> <textarea id="message" rows="3" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-rose-400 focus:outline-none transition"></textarea>
+       </div><!-- Submit Button --> <button type="submit" id="submit-btn" class="btn-primary w-full bg-rose-500 text-white py-4 rounded-lg text-lg font-semibold shadow-lg"> <span id="btn-submit-text">Submit RSVP</span> </button>
+      </div>
+     </form><!-- Success Message -->
+     <div id="success-message" class="mt-6 bg-green-100 border-2 border-green-400 text-green-800 px-6 py-4 rounded-lg hidden">
+      <p class="font-semibold" id="success-text">Thank you for your RSVP! We look forward to celebrating with you.</p>
+     </div>
+    </div>
+   </section><!-- Gifts Section -->
+   <section id="gifts" class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="serif-font text-5xl font-bold text-center text-gray-800 mb-4" id="section-gifts-title">Gifts</h2>
+     <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto" id="section-gifts-subtitle">Your presence is the greatest gift, but if you wish to contribute</p>
+     <div class="grid md:grid-cols-2 gap-8"><!-- IBAN Card -->
+      <div class="card-hover bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 shadow-lg">
+       <div class="text-center mb-6">
+        <div class="text-5xl mb-4">
+         💝
+        </div>
+        <h3 class="serif-font text-2xl font-bold text-gray-800 mb-4" id="iban-title">Monetary Gift</h3>
+       </div>
+       <div class="bg-white rounded-lg p-4 border-2 border-dashed border-gray-300">
+        <p class="text-sm text-gray-600 mb-2" id="iban-label">IBAN:</p>
+        <p class="font-mono text-sm text-gray-800 break-all" id="iban-value">PT50 0000 0000 0000 0000 0000 0</p>
+       </div>
+      </div><!-- Spotify Playlist Card -->
+      <div class="card-hover bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl p-8 shadow-lg">
+       <div class="text-center mb-6">
+        <div class="text-5xl mb-4">
+         🎵
+        </div>
+        <h3 class="serif-font text-2xl font-bold text-gray-800 mb-4" id="spotify-title">Wedding Playlist</h3>
+        <p class="text-gray-600 text-sm mb-6" id="spotify-subtitle">Add your favorite songs to our celebration!</p>
+       </div><a id="spotify-link" href="https://open.spotify.com/playlist/" target="_blank" rel="noopener noreferrer" class="btn-primary block text-center bg-green-500 text-white py-3 rounded-lg font-semibold shadow-lg"> <span id="spotify-btn-text">Open Playlist</span> </a>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+     <p class="serif-font text-3xl font-bold mb-4"><span id="footer-bride">Sofia</span> &amp; <span id="footer-groom">Miguel</span></p>
+     <p class="text-gray-400" id="footer-date">June 15, 2025</p>
+     <p class="text-gray-500 text-sm mt-6" id="footer-text">We can't wait to celebrate with you!</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    let currentLanguage = 'en';
+    let rsvpData = [];
+    let isInitialized = false;
+    let weddingDate = new Date('2025-06-15T16:00:00');
+
+    const translations = {
+      en: {
+        nav_home: 'Home',
+        nav_details: 'Details',
+        nav_rsvp: 'RSVP',
+        nav_gifts: 'Gifts',
+        hero_subtitle: "We're getting married!",
+        btn_rsvp_hero: 'RSVP Now',
+        label_days: 'Days',
+        label_hours: 'Hours',
+        label_minutes: 'Minutes',
+        label_seconds: 'Seconds',
+        section_details_title: 'Wedding Details',
+        section_details_subtitle: 'Join us for a day of love and celebration',
+        ceremony_title: 'Ceremony',
+        ceremony_venue_label: 'Venue:',
+        ceremony_time_label: 'Time:',
+        reception_title: 'Reception',
+        reception_venue_label: 'Venue:',
+        reception_address_label: 'Address:',
+        timeline_title: 'Event Timeline',
+        timeline_time_1: '4:00 PM',
+        timeline_event_1: 'Ceremony Begins',
+        timeline_time_2: '5:00 PM',
+        timeline_event_2: 'Cocktail Hour',
+        timeline_time_3: '6:30 PM',
+        timeline_event_3: 'Reception & Dinner',
+        timeline_time_4: '8:00 PM',
+        timeline_event_4: 'First Dance & Party',
+        timeline_time_5: '12:00 AM',
+        timeline_event_5: 'Event Ends',
+        dresscode_title: 'Dress Code',
+        dresscode_description: 'Elegant evening attire requested',
+        menu_title: 'Menu Options',
+        menu_option_1_label: 'Chicken:',
+        menu_option_1: 'Herb-Roasted Chicken',
+        menu_option_2_label: 'Fish:',
+        menu_option_2: 'Grilled Salmon',
+        menu_option_3_label: 'Vegetarian:',
+        menu_option_3: 'Vegetarian Risotto',
+        section_rsvp_title: 'RSVP',
+        section_rsvp_subtitle: 'Please let us know if you can join us',
+        label_name: 'Full Name',
+        label_email: 'Email',
+        label_attending: 'Will you be attending?',
+        label_yes: 'Yes',
+        label_no: 'No',
+        label_guests: 'Number of Guests',
+        label_menu: 'Menu Choice',
+        label_chicken: 'Herb-Roasted Chicken',
+        label_fish: 'Grilled Salmon',
+        label_vegetarian: 'Vegetarian Risotto',
+        label_dietary_prefs: 'Dietary Preferences',
+        label_is_vegetarian: "I'm Vegetarian",
+        label_has_allergies: 'I have food allergies/intolerances',
+        label_allergy_details: 'Please specify your allergies or intolerances',
+        label_dietary: 'Other Dietary Requirements',
+        label_message: 'Message for the Couple (Optional)',
+        btn_submit_text: 'Submit RSVP',
+        success_text: 'Thank you for your RSVP! We look forward to celebrating with you.',
+        section_gifts_title: 'Gifts',
+        section_gifts_subtitle: 'Your presence is the greatest gift, but if you wish to contribute',
+        iban_title: 'Monetary Gift',
+        iban_label: 'IBAN:',
+        spotify_title: 'Wedding Playlist',
+        spotify_subtitle: 'Add your favorite songs to our celebration!',
+        spotify_btn_text: 'Open Playlist',
+        footer_text: "We can't wait to celebrate with you!"
+      },
+      pt: {
+        nav_home: 'Início',
+        nav_details: 'Detalhes',
+        nav_rsvp: 'Confirmar',
+        nav_gifts: 'Presentes',
+        hero_subtitle: 'Vamos nos casar!',
+        btn_rsvp_hero: 'Confirmar Presença',
+        label_days: 'Dias',
+        label_hours: 'Horas',
+        label_minutes: 'Minutos',
+        label_seconds: 'Segundos',
+        section_details_title: 'Detalhes do Casamento',
+        section_details_subtitle: 'Junte-se a nós para um dia de amor e celebração',
+        ceremony_title: 'Cerimônia',
+        ceremony_venue_label: 'Local:',
+        ceremony_time_label: 'Hora:',
+        reception_title: 'Recepção',
+        reception_venue_label: 'Local:',
+        reception_address_label: 'Endereço:',
+        timeline_title: 'Cronograma do Evento',
+        timeline_time_1: '16:00',
+        timeline_event_1: 'Início da Cerimônia',
+        timeline_time_2: '17:00',
+        timeline_event_2: 'Hora do Coquetel',
+        timeline_time_3: '18:30',
+        timeline_event_3: 'Recepção e Jantar',
+        timeline_time_4: '20:00',
+        timeline_event_4: 'Primeira Dança e Festa',
+        timeline_time_5: '00:00',
+        timeline_event_5: 'Fim do Evento',
+        dresscode_title: 'Código de Vestimenta',
+        dresscode_description: 'Traje de gala solicitado',
+        menu_title: 'Opções de Menu',
+        menu_option_1_label: 'Frango:',
+        menu_option_1: 'Frango Assado com Ervas',
+        menu_option_2_label: 'Peixe:',
+        menu_option_2: 'Salmão Grelhado',
+        menu_option_3_label: 'Vegetariano:',
+        menu_option_3: 'Risoto Vegetariano',
+        section_rsvp_title: 'Confirmar Presença',
+        section_rsvp_subtitle: 'Por favor, nos informe se você pode se juntar a nós',
+        label_name: 'Nome Completo',
+        label_email: 'Email',
+        label_attending: 'Você estará presente?',
+        label_yes: 'Sim',
+        label_no: 'Não',
+        label_guests: 'Número de Convidados',
+        label_menu: 'Escolha do Menu',
+        label_chicken: 'Frango Assado com Ervas',
+        label_fish: 'Salmão Grelhado',
+        label_vegetarian: 'Risoto Vegetariano',
+        label_dietary_prefs: 'Preferências Alimentares',
+        label_is_vegetarian: 'Sou Vegetariano',
+        label_has_allergies: 'Tenho alergias/intolerâncias alimentares',
+        label_allergy_details: 'Especifique suas alergias ou intolerâncias',
+        label_dietary: 'Outras Restrições Alimentares',
+        label_message: 'Mensagem para o Casal (Opcional)',
+        btn_submit_text: 'Enviar Confirmação',
+        success_text: 'Obrigado pela sua confirmação! Estamos ansiosos para celebrar com você.',
+        section_gifts_title: 'Presentes',
+        section_gifts_subtitle: 'Sua presença é o maior presente, mas se você deseja contribuir',
+        iban_title: 'Presente em Dinheiro',
+        iban_label: 'IBAN:',
+        spotify_title: 'Playlist do Casamento',
+        spotify_subtitle: 'Adicione suas músicas favoritas à nossa celebração!',
+        spotify_btn_text: 'Abrir Playlist',
+        footer_text: 'Mal podemos esperar para celebrar com você!'
+      },
+      es: {
+        nav_home: 'Inicio',
+        nav_details: 'Detalles',
+        nav_rsvp: 'Confirmar',
+        nav_gifts: 'Regalos',
+        hero_subtitle: '¡Nos casamos!',
+        btn_rsvp_hero: 'Confirmar Asistencia',
+        label_days: 'Días',
+        label_hours: 'Horas',
+        label_minutes: 'Minutos',
+        label_seconds: 'Segundos',
+        section_details_title: 'Detalles de la Boda',
+        section_details_subtitle: 'Únete a nosotros para un día de amor y celebración',
+        ceremony_title: 'Ceremonia',
+        ceremony_venue_label: 'Lugar:',
+        ceremony_time_label: 'Hora:',
+        reception_title: 'Recepción',
+        reception_venue_label: 'Lugar:',
+        reception_address_label: 'Dirección:',
+        timeline_title: 'Cronograma del Evento',
+        timeline_time_1: '16:00',
+        timeline_event_1: 'Comienza la Ceremonia',
+        timeline_time_2: '17:00',
+        timeline_event_2: 'Hora del Cóctel',
+        timeline_time_3: '18:30',
+        timeline_event_3: 'Recepción y Cena',
+        timeline_time_4: '20:00',
+        timeline_event_4: 'Primer Baile y Fiesta',
+        timeline_time_5: '00:00',
+        timeline_event_5: 'Fin del Evento',
+        dresscode_title: 'Código de Vestimenta',
+        dresscode_description: 'Se solicita vestimenta elegante de noche',
+        menu_title: 'Opciones de Menú',
+        menu_option_1_label: 'Pollo:',
+        menu_option_1: 'Pollo Asado con Hierbas',
+        menu_option_2_label: 'Pescado:',
+        menu_option_2: 'Salmón a la Parrilla',
+        menu_option_3_label: 'Vegetariano:',
+        menu_option_3: 'Risotto Vegetariano',
+        section_rsvp_title: 'Confirmar Asistencia',
+        section_rsvp_subtitle: 'Por favor, háznos saber si puedes unirte a nosotros',
+        label_name: 'Nombre Completo',
+        label_email: 'Correo Electrónico',
+        label_attending: '¿Asistirás?',
+        label_yes: 'Sí',
+        label_no: 'No',
+        label_guests: 'Número de Invitados',
+        label_menu: 'Elección de Menú',
+        label_chicken: 'Pollo Asado con Hierbas',
+        label_fish: 'Salmón a la Parrilla',
+        label_vegetarian: 'Risotto Vegetariano',
+        label_dietary_prefs: 'Preferencias Dietéticas',
+        label_is_vegetarian: 'Soy Vegetariano',
+        label_has_allergies: 'Tengo alergias/intolerancias alimentarias',
+        label_allergy_details: 'Especifica tus alergias o intolerancias',
+        label_dietary: 'Otros Requisitos Dietéticos',
+        label_message: 'Mensaje para la Pareja (Opcional)',
+        btn_submit_text: 'Enviar Confirmación',
+        success_text: '¡Gracias por tu confirmación! Esperamos celebrar contigo.',
+        section_gifts_title: 'Regalos',
+        section_gifts_subtitle: 'Tu presencia es el mejor regalo, pero si deseas contribuir',
+        iban_title: 'Regalo en Efectivo',
+        iban_label: 'IBAN:',
+        spotify_title: 'Lista de Reproducción de la Boda',
+        spotify_subtitle: '¡Añade tus canciones favoritas a nuestra celebración!',
+        spotify_btn_text: 'Abrir Lista',
+        footer_text: '¡No podemos esperar para celebrar contigo!'
+      }
+    };
+
+    const defaultConfig = {
+      bride_name: 'Sofia',
+      groom_name: 'Miguel',
+      wedding_date: '2025-06-15',
+      ceremony_venue: 'Santa Maria Chapel',
+      ceremony_time: '4:00 PM',
+      reception_venue: 'Villa Rosa Gardens',
+      venue_address: '123 Garden Street, Lisbon',
+      dresscode: 'Formal / Black Tie Optional',
+      spotify_playlist_url: 'https://open.spotify.com/playlist/',
+      iban_number: 'PT50 0000 0000 0000 0000 0000 0',
+      background_color: '#fdf4f5',
+      surface_color: '#ffffff',
+      text_color: '#1f2937',
+      primary_action_color: '#f43f5e',
+      secondary_action_color: '#d97777',
+      font_family: 'Montserrat',
+      font_size: 16
+    };
+
+    const dataHandler = {
+      onDataChanged(data) {
+        rsvpData = data;
+      }
+    };
+
+    async function initializeSdk() {
+      if (window.dataSdk) {
+        const result = await window.dataSdk.init(dataHandler);
+        if (result.isOk) {
+          isInitialized = true;
+        }
+      }
+    }
+
+    function changeLanguage(lang) {
+      currentLanguage = lang;
+      
+      document.querySelectorAll('[id^="lang-"]').forEach(btn => {
+        btn.classList.remove('bg-rose-500', 'text-white', 'border-rose-500');
+        btn.classList.add('border-gray-300');
+      });
+      
+      const activeBtn = document.getElementById(`lang-${lang}`);
+      activeBtn.classList.add('bg-rose-500', 'text-white', 'border-rose-500');
+      activeBtn.classList.remove('border-gray-300');
+      
+      updateTranslations();
+    }
+
+    function updateTranslations() {
+      const t = translations[currentLanguage];
+      Object.keys(t).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          element.textContent = t[key];
+        }
+      });
+    }
+
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      const navHeight = 80;
+      const targetPosition = section.offsetTop - navHeight;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate.getTime() - now;
+
+      if (distance < 0) {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+
+    document.querySelectorAll('input[name="attending"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const additionalFields = document.getElementById('additional-fields');
+        if (this.value === 'yes') {
+          additionalFields.style.display = 'block';
+          document.getElementById('num-guests').required = true;
+          document.querySelectorAll('input[name="menu"]').forEach(r => r.required = true);
+        } else {
+          additionalFields.style.display = 'none';
+          document.getElementById('num-guests').required = false;
+          document.querySelectorAll('input[name="menu"]').forEach(r => r.required = false);
+        }
+      });
+    });
+
+    document.getElementById('has-allergies').addEventListener('change', function() {
+      const allergySection = document.getElementById('allergy-details-section');
+      if (this.checked) {
+        allergySection.style.display = 'block';
+      } else {
+        allergySection.style.display = 'none';
+        document.getElementById('allergy-details').value = '';
+      }
+    });
+
+    document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      if (!isInitialized) return;
+      
+      if (rsvpData.length >= 999) {
+        showToast('Maximum RSVP limit reached');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Submitting...</span>';
+
+      const attending = document.querySelector('input[name="attending"]:checked').value;
+      const menuChoice = attending === 'yes' ? document.querySelector('input[name="menu"]:checked')?.value || '' : '';
+      const isVegetarian = attending === 'yes' ? document.getElementById('is-vegetarian').checked : false;
+      const hasAllergies = attending === 'yes' ? document.getElementById('has-allergies').checked : false;
+      const allergyDetails = hasAllergies ? document.getElementById('allergy-details').value : '';
+      
+      const rsvp = {
+        guest_name: document.getElementById('guest-name').value,
+        email: document.getElementById('guest-email').value,
+        attending: attending,
+        number_of_guests: attending === 'yes' ? parseInt(document.getElementById('num-guests').value) : 0,
+        menu_choice: menuChoice,
+        is_vegetarian: isVegetarian,
+        has_allergies: hasAllergies,
+        allergy_details: allergyDetails,
+        dietary_restrictions: document.getElementById('dietary').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString()
+      };
+
+      const result = await window.dataSdk.create(rsvp);
+      
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<span id="btn-submit-text">${translations[currentLanguage].btn_submit_text}</span>`;
+      
+      if (result.isOk) {
+        document.getElementById('rsvp-form').reset();
+        document.getElementById('additional-fields').style.display = 'none';
+        document.getElementById('allergy-details-section').style.display = 'none';
+        const successMsg = document.getElementById('success-message');
+        successMsg.classList.remove('hidden');
+        setTimeout(() => successMsg.classList.add('hidden'), 5000);
+      } else {
+        showToast('Failed to submit RSVP. Please try again.');
+      }
+    });
+
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-4 right-4 bg-gray-900 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    async function onConfigChange(config) {
+      const brideName = config.bride_name || defaultConfig.bride_name;
+      const groomName = config.groom_name || defaultConfig.groom_name;
+      const weddingDateStr = config.wedding_date || defaultConfig.wedding_date;
+      
+      document.getElementById('nav-bride').textContent = brideName;
+      document.getElementById('nav-groom').textContent = groomName;
+      document.getElementById('hero-bride').textContent = brideName;
+      document.getElementById('hero-groom').textContent = groomName;
+      document.getElementById('footer-bride').textContent = brideName;
+      document.getElementById('footer-groom').textContent = groomName;
+      
+      weddingDate = new Date(`${weddingDateStr}T16:00:00`);
+      const dateObj = new Date(weddingDateStr);
+      const formattedDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('hero-date').textContent = formattedDate;
+      document.getElementById('footer-date').textContent = formattedDate;
+      
+      document.getElementById('ceremony-venue-value').textContent = config.ceremony_venue || defaultConfig.ceremony_venue;
+      document.getElementById('ceremony-time-value').textContent = config.ceremony_time || defaultConfig.ceremony_time;
+      document.getElementById('reception-venue-value').textContent = config.reception_venue || defaultConfig.reception_venue;
+      document.getElementById('reception-address-value').textContent = config.venue_address || defaultConfig.venue_address;
+      document.getElementById('dresscode-value').textContent = config.dresscode || defaultConfig.dresscode;
+      
+      const spotifyUrl = config.spotify_playlist_url || defaultConfig.spotify_playlist_url;
+      document.getElementById('spotify-link').href = spotifyUrl;
+      document.getElementById('iban-value').textContent = config.iban_number || defaultConfig.iban_number;
+      
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      
+      document.body.style.color = textColor;
+      document.body.style.fontFamily = `'${customFont}', sans-serif`;
+      document.body.style.fontSize = `${baseSize}px`;
+      
+      const heroSection = document.querySelector('.hero-gradient');
+      if (heroSection) {
+        heroSection.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${surfaceColor} 50%, #fff5f7 100%)`;
+      }
+      
+      const surfaces = document.querySelectorAll('.bg-white');
+      surfaces.forEach(s => s.style.backgroundColor = surfaceColor);
+      
+      const primaryButtons = document.querySelectorAll('.btn-primary');
+      primaryButtons.forEach(btn => {
+        btn.style.backgroundColor = primaryColor;
+        btn.onmouseenter = function() { this.style.backgroundColor = secondaryColor; };
+        btn.onmouseleave = function() { this.style.backgroundColor = primaryColor; };
+      });
+      
+      const serifElements = document.querySelectorAll('.serif-font');
+      serifElements.forEach(el => {
+        el.style.fontFamily = `'${customFont}', serif`;
+      });
+      
+      updateCountdown();
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig: defaultConfig,
+        onConfigChange: onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['bride_name', config.bride_name || defaultConfig.bride_name],
+          ['groom_name', config.groom_name || defaultConfig.groom_name],
+          ['wedding_date', config.wedding_date || defaultConfig.wedding_date],
+          ['ceremony_venue', config.ceremony_venue || defaultConfig.ceremony_venue],
+          ['ceremony_time', config.ceremony_time || defaultConfig.ceremony_time],
+          ['reception_venue', config.reception_venue || defaultConfig.reception_venue],
+          ['venue_address', config.venue_address || defaultConfig.venue_address],
+          ['dresscode', config.dresscode || defaultConfig.dresscode],
+          ['spotify_playlist_url', config.spotify_playlist_url || defaultConfig.spotify_playlist_url],
+          ['iban_number', config.iban_number || defaultConfig.iban_number]
+        ])
+      });
+    }
+
+    initializeSdk();
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bc4c2c027f6c129',t:'MTc2ODEzODE0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
