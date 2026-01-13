@@ -19,3 +19,14 @@ The app will manage:
 - Australia Costom
 - 
 - 
+
+## TODO
+- [ ] Refine .gitignore
+
+### On the server
+- [ ] Disable SSH login (key-only). Install fail2ban.
+- [ ] Configure firewall with ufw 
+- [ ] Install Docker 
+- [ ] Clone the repo in /opt/wedding-site
+- [ ] Create .env file with SECRET_KEY and URL_DATABASE.
+
