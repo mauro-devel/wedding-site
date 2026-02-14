@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}RSVP - Wedding Website{% endblock %}
+
+{% block content %}
+<h1>RSVP</h1>
+<p>Please enter your invitation code to RSVP.</p>
+
+<form method="POST" action="{{ url_for('main.rsvp') }}">
+    <label for="invitation_code">Invitation Code:</label>
+    <input type="text" id="invitation_code" name="invitation_code" required>
+    <button type="submit">Continue</button>
+</form>
+{% endblock %}

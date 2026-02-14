@@ -8,3 +8,9 @@ itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
 Werkzeug==3.1.5
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.7
+Flask-Babel==4.0.0
+python-dotenv==1.0.1
+gunicorn==22.0.0
+pytest==8.3.2
