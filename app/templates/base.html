@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ get_locale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Wedding Website{% endblock %}</title>
+    <title>{% block title %}Ana & Mauricio{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <a href="{{ url_for('main.index') }}">Home</a>
-        <a href="{{ url_for('main.rsvp') }}">RSVP</a>
+        <a href="{{ url_for('main.index') }}">{{ _('Home') }}</a>
+        <a href="{{ url_for('main.rsvp') }}">{{ _('RSVP') }}</a>
         |
-        <a href="{{ url_for('main.set_language', lang='es') }}">Español</a>
-        <a href="{{ url_for('main.set_language', lang='pt_PT') }}">Português</a>
+        <a href="{{ url_for('main.set_language', lang='es') }}" 
+           {% if get_locale() == 'es' %}style="font-weight: bold; color: #d4af37;"{% endif %}>
+            Español
+        </a>
+        <a href="{{ url_for('main.set_language', lang='pt_PT') }}"
+           {% if get_locale() == 'pt_PT' %}style="font-weight: bold; color: #d4af37;"{% endif %}>
+            Português
+        </a>
     </nav>
     
     <main>
@@ -31,7 +38,7 @@
     </main>
     
     <footer>
-        <p>&copy; 2026 Wedding Website</p>
+        <p>&copy; 2026 Ana & Mauricio</p>
     </footer>
 </body>
 </html>

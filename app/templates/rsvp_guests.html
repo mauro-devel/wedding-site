@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Confirm Guests - RSVP{% endblock %}
+{% block title %}{{ _('Confirm Guests') }} - {{ _('RSVP') }}{% endblock %}
 
 {% block content %}
-<h1>RSVP - Confirm Your Attendance</h1>
+<h1>{{ _('RSVP - Confirm Your Attendance') }}</h1>
 
 <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-    <p><strong>Invitation Code:</strong> {{ invitation.invitation_code }}</p>
-    <p><strong>Country:</strong> {{ invitation.country_code }}</p>
+    <p><strong>{{ _('Invitation Code:') }}</strong> {{ invitation.invitation_code }}</p>
+    <p><strong>{{ _('Country:') }}</strong> {{ invitation.country_code }}</p>
 </div>
 
 <form method="POST" action="{{ url_for('main.rsvp_guests') }}">
@@ -17,16 +17,37 @@
     <div style="background: white; padding: 1.5rem; margin: 1rem 0; border: 2px solid #ddd; border-radius: 8px;">
         <h3>{{ guest.first_name }} {{ guest.last_name }}</h3>
         
+        {% if guest.rsvp %}
+        <p style="background: #e3f2fd; padding: 0.5rem; border-radius: 4px; margin-bottom: 1rem;">
+            <strong>{{ _('Current response:') }}</strong> 
+            {% if guest.rsvp.status.status_key == 'ACCEPTED' %}
+                ✅ {{ _('Attending') }}
+            {% elif guest.rsvp.status.status_key == 'DECLINED' %}
+                ❌ {{ _('Not attending') }}
+            {% else %}
+                ⏳ {{ _('Pending') }}
+            {% endif %}
+        </p>
+        {% endif %}
+
         <div style="margin: 1rem 0;">
-            <label style="font-weight: 600;">Will you attend?</label>
+            <label style="font-weight: 600;">{{ _('Will you attend?') }}</label>
             <div>
                 <label style="display: inline-block; margin-right: 1rem;">
-                    <input type="radio" name="rsvp_{{ guest.id }}" value="ACCEPTED" required>
-                    Yes, I'll be there!
+                    <input type="radio" 
+                           name="rsvp_{{ guest.id }}" 
+                           value="ACCEPTED" 
+                           {% if guest.rsvp and guest.rsvp.status.status_key == 'ACCEPTED' %}checked{% endif %}
+                           required>
+                    {{ _("Yes, I'll be there!") }}
                 </label>
                 <label style="display: inline-block;">
-                    <input type="radio" name="rsvp_{{ guest.id }}" value="DECLINED" required>
-                    Sorry, I can't make it
+                    <input type="radio" 
+                           name="rsvp_{{ guest.id }}" 
+                           value="DECLINED"
+                           {% if guest.rsvp and guest.rsvp.status.status_key == 'DECLINED' %}checked{% endif %}
+                           required>
+                    {{ _("Sorry, I can't make it") }}
                 </label>
             </div>
         </div>
@@ -35,10 +56,16 @@
     </div>
     {% endfor %}
     
-    <button type="submit" style="margin-top: 2rem;">Submit RSVP</button>
+    <button type="submit" style="margin-top: 2rem;">
+        {% if invitation.guests|selectattr('rsvp')|list %}
+            {{ _('Update RSVP') }}
+        {% else %}
+            {{ _('Submit RSVP') }}
+        {% endif %}
+    </button>
 </form>
 
 <p style="margin-top: 2rem; text-align: center;">
-    <a href="{{ url_for('main.rsvp') }}">← Enter a different code</a>
+    <a href="{{ url_for('main.rsvp') }}">← {{ _('Enter a different code') }}</a>
 </p>
 {% endblock %}

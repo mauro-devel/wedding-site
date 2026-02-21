@@ -1,4 +1,4 @@
-from flask import Flask, request, session
+from flask import Flask, request, session, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_babel import Babel
@@ -13,9 +13,11 @@ def get_locale():
     # Try to get from session first
     if 'language' in session:
         return session['language']
+    
     # Try to get from URL parameter
     lang = request.args.get('lang')
     if lang in ['es', 'pt_PT']:
+        session['language'] = lang
         return lang
     # Fall back to browser preference
     return request.accept_languages.best_match(['es', 'pt_PT']) or 'es'
@@ -44,7 +46,10 @@ def create_app(config_name='development'):
     # Make get_locale available in templates
     @app.context_processor
     def inject_locale():
-        return dict(get_locale=get_locale)
+        return dict(
+            get_locale=lambda: get_locale(),
+            current_locale=get_locale()
+        )
     
     # Register blueprints
     from app.routes.main import bp as main_bp
