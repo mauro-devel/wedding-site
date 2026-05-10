@@ -20,142 +20,141 @@ msgstr ""
 
 #: app/routes/main.py:23
 msgid "Invitation code not found. Please check and try again."
-msgstr ""
+msgstr "Código de invitación no encontrado. Por favor, verifica e intenta de nuevo."
 
 #: app/routes/main.py:33
 msgid ""
 "You have already submitted a confirmation. You can update your response "
 "below."
-msgstr ""
+msgstr "Ya introduciste una confirmación. Puedes modificarla."
 
 #: app/routes/main.py:47
 msgid "Please enter your invitation code first."
-msgstr ""
+msgstr "Por favor, ingresa primero tu código de invitación."
 
 #: app/routes/main.py:89
 msgid "RSVP submitted successfully!"
-msgstr ""
+msgstr "¡Confirmación ingresada con éxito!"
 
 #: app/templates/base.html:12
 msgid "Home"
-msgstr ""
+msgstr "Página Inicial"
 
 #: app/templates/base.html:13 app/templates/index.html:10
 #: app/templates/rsvp.html:3 app/templates/rsvp.html:6
 #: app/templates/rsvp_guests.html:3
 msgid "RSVP"
-msgstr ""
+msgstr "Confirmación"
 
 #: app/templates/index.html:3
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenido"
 
 #: app/templates/index.html:6
 msgid "Welcome to Our Wedding!"
-msgstr ""
+msgstr "¡Bienvenidas a nuestra boda!"
 
 #: app/templates/index.html:7
 msgid "We're getting married and we'd love for you to join us!"
-msgstr ""
+msgstr "¡Nos vamos a casar y queremos que nos acompañes!"
 
 #: app/templates/rsvp.html:3
 msgid "Wedding Website"
-msgstr ""
+msgstr "Portal de Boda"
 
 #: app/templates/rsvp.html:7
 msgid "Please enter your invitation code to RSVP."
-msgstr ""
+msgstr "Por favor, ingresa tu código de invitación para confirmar."
 
 #: app/templates/rsvp.html:10 app/templates/rsvp_guests.html:9
 msgid "Invitation Code:"
-msgstr ""
+msgstr "Código de invitación:"
 
 #: app/templates/rsvp.html:14
 msgid "Enter your code"
-msgstr ""
+msgstr "Ingresa tu código"
 
 #: app/templates/rsvp.html:16
 msgid "Continue"
-msgstr ""
+msgstr "Continuar"
 
 #: app/templates/rsvp_confirmation.html:3
 msgid "Thank You"
-msgstr ""
+msgstr "Gracias"
 
 #: app/templates/rsvp_confirmation.html:7
 msgid "Thank You!"
-msgstr ""
+msgstr "¡Gracias!"
 
 #: app/templates/rsvp_confirmation.html:8
 msgid "Your RSVP has been submitted successfully."
-msgstr ""
+msgstr "Tu confirmación ha sido enviada con éxito."
 
 #: app/templates/rsvp_confirmation.html:12
 msgid "RSVP Summary:"
-msgstr ""
+msgstr "Resumen de confirmación:"
 
 #: app/templates/rsvp_confirmation.html:18 app/templates/rsvp_guests.html:24
 msgid "Attending"
-msgstr ""
+msgstr "Asiste"
 
 #: app/templates/rsvp_confirmation.html:20 app/templates/rsvp_guests.html:26
 msgid "Not attending"
-msgstr ""
+msgstr "No asiste"
 
 #: app/templates/rsvp_confirmation.html:22
 #: app/templates/rsvp_confirmation.html:25 app/templates/rsvp_guests.html:28
 msgid "Pending"
-msgstr ""
+msgstr "Pendiente"
 
 #: app/templates/rsvp_confirmation.html:31
 msgid "You can return to this page anytime to update your response using code:"
-msgstr ""
+msgstr "Pedes regresar a esta página en cualquier momento para modificar tu respuesta usando el código: "
 
 #: app/templates/rsvp_confirmation.html:33
 msgid "We look forward to celebrating with you!"
-msgstr ""
+msgstr "¡Esperamos celebrar junto muy pronto!"
 
 #: app/templates/rsvp_confirmation.html:38
 msgid "Return to Home"
-msgstr ""
+msgstr "Regresar a lá Página Inicial"
 
 #: app/templates/rsvp_guests.html:3
 msgid "Confirm Guests"
-msgstr ""
+msgstr "Confirmar invitados"
 
 #: app/templates/rsvp_guests.html:6
 msgid "RSVP - Confirm Your Attendance"
-msgstr ""
+msgstr "Confirma tu asistencia"
 
 #: app/templates/rsvp_guests.html:10
 msgid "Country:"
-msgstr ""
+msgstr "País"
 
 #: app/templates/rsvp_guests.html:22
 msgid "Current response:"
-msgstr ""
+msgstr "Respuesta actual:"
 
 #: app/templates/rsvp_guests.html:34
 msgid "Will you attend?"
-msgstr ""
+msgstr "¿Asistirás?"
 
 #: app/templates/rsvp_guests.html:42
 msgid "Yes, I'll be there!"
-msgstr ""
+msgstr "¡Sí, allí estaré!"
 
 #: app/templates/rsvp_guests.html:50
 msgid "Sorry, I can't make it"
-msgstr ""
+msgstr "Disculpa, no puedo"
 
 #: app/templates/rsvp_guests.html:61
 msgid "Update RSVP"
-msgstr ""
+msgstr "Modificar confrimación"
 
 #: app/templates/rsvp_guests.html:63
 msgid "Submit RSVP"
-msgstr ""
+msgstr "Enviar confirmación"
 
 #: app/templates/rsvp_guests.html:69
 msgid "Enter a different code"
-msgstr ""
-
+msgstr "Ingresa un código diferente"

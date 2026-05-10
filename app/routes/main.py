@@ -105,6 +105,10 @@ def rsvp_confirmation():
 @bp.route('/language/<lang>')
 def set_language(lang):
     """Set the user's language preference."""
+    print(f"Setting language to {lang}")
     if lang in ['es', 'pt_PT']:
         session['language'] = lang
+        print(f"Session language set to {session.get('language')}")
+    else:
+        print(f"Invalid language {lang}")
     return redirect(request.referrer or url_for('main.index'))

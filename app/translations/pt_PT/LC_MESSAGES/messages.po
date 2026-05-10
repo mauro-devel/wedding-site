@@ -1,4 +1,4 @@
-# Portuguese (Portugal) translations for PROJECT.
+# Portuguese translations for PROJECT.
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
@@ -20,142 +20,142 @@ msgstr ""
 
 #: app/routes/main.py:23
 msgid "Invitation code not found. Please check and try again."
-msgstr ""
+msgstr "Código de convite não encontrado. Por favor, verifique e tente novamente."
 
 #: app/routes/main.py:33
-msgid ""
-"You have already submitted a confirmation. You can update your response "
-"below."
-msgstr ""
+msgid "You have already submitted a confirmation. You can update your response below."
+msgstr "Já submeteu uma confirmação. Pode atualizar a sua resposta abaixo."
 
 #: app/routes/main.py:47
 msgid "Please enter your invitation code first."
-msgstr ""
+msgstr "Por favor, introduza primeiro o seu código de convite."
 
 #: app/routes/main.py:89
 msgid "RSVP submitted successfully!"
-msgstr ""
+msgstr "RSVP enviado com sucesso!"
 
 #: app/templates/base.html:12
 msgid "Home"
-msgstr ""
+msgstr "Início"
 
 #: app/templates/base.html:13 app/templates/index.html:10
 #: app/templates/rsvp.html:3 app/templates/rsvp.html:6
 #: app/templates/rsvp_guests.html:3
 msgid "RSVP"
-msgstr ""
+msgstr "Confirmação"
 
 #: app/templates/index.html:3
 msgid "Welcome"
-msgstr ""
+msgstr "Bem-vindos"
 
-#: app/templates/index.html:6
+#: app/templates/index.html:8
 msgid "Welcome to Our Wedding!"
-msgstr ""
+msgstr "Bem-vindos ao Nosso Casamento!"
 
-#: app/templates/index.html:7
+#: app/templates/index.html:9
 msgid "We're getting married and we'd love for you to join us!"
-msgstr ""
+msgstr "Vamos casar e adoraríamos que nos acompanhassem!"
 
-#: app/templates/rsvp.html:3
-msgid "Wedding Website"
-msgstr ""
+#: app/templates/index.html:11
+msgid "RSVP Now"
+msgstr "Confirmar Presença"
 
 #: app/templates/rsvp.html:7
 msgid "Please enter your invitation code to RSVP."
-msgstr ""
+msgstr "Por favor, introduza o seu código de convite para confirmar presença."
 
-#: app/templates/rsvp.html:10 app/templates/rsvp_guests.html:9
+#: app/templates/rsvp.html:10
 msgid "Invitation Code:"
-msgstr ""
+msgstr "Código de Convite:"
 
 #: app/templates/rsvp.html:14
 msgid "Enter your code"
-msgstr ""
+msgstr "Introduza o seu código"
 
 #: app/templates/rsvp.html:16
 msgid "Continue"
-msgstr ""
+msgstr "Continuar"
 
 #: app/templates/rsvp_confirmation.html:3
 msgid "Thank You"
-msgstr ""
+msgstr "Obrigado"
 
 #: app/templates/rsvp_confirmation.html:7
 msgid "Thank You!"
-msgstr ""
+msgstr "Obrigado!"
 
 #: app/templates/rsvp_confirmation.html:8
 msgid "Your RSVP has been submitted successfully."
-msgstr ""
+msgstr "O seu RSVP foi enviado com sucesso."
 
 #: app/templates/rsvp_confirmation.html:12
 msgid "RSVP Summary:"
-msgstr ""
+msgstr "Resumo do RSVP:"
 
-#: app/templates/rsvp_confirmation.html:18 app/templates/rsvp_guests.html:24
+#: app/templates/rsvp_confirmation.html:17 app/templates/rsvp_guests.html:18
 msgid "Attending"
-msgstr ""
+msgstr "Confirmado"
 
-#: app/templates/rsvp_confirmation.html:20 app/templates/rsvp_guests.html:26
+#: app/templates/rsvp_confirmation.html:19 app/templates/rsvp_guests.html:20
 msgid "Not attending"
-msgstr ""
+msgstr "Não confirmado"
 
-#: app/templates/rsvp_confirmation.html:22
-#: app/templates/rsvp_confirmation.html:25 app/templates/rsvp_guests.html:28
+#: app/templates/rsvp_confirmation.html:21 app/templates/rsvp_guests.html:22
 msgid "Pending"
-msgstr ""
+msgstr "Pendente"
+
+#: app/templates/rsvp_confirmation.html:29
+msgid "You can return to this page anytime to update your response using code:"
+msgstr "Pode voltar a esta página a qualquer momento para atualizar a sua resposta usando o código:"
 
 #: app/templates/rsvp_confirmation.html:31
-msgid "You can return to this page anytime to update your response using code:"
-msgstr ""
-
-#: app/templates/rsvp_confirmation.html:33
 msgid "We look forward to celebrating with you!"
-msgstr ""
+msgstr "Esperamos celebrar convosco!"
 
-#: app/templates/rsvp_confirmation.html:38
+#: app/templates/rsvp_confirmation.html:35
 msgid "Return to Home"
-msgstr ""
-
-#: app/templates/rsvp_guests.html:3
-msgid "Confirm Guests"
-msgstr ""
+msgstr "Voltar ao Início"
 
 #: app/templates/rsvp_guests.html:6
+msgid "Confirm Guests"
+msgstr "Confirmar Convidados"
+
+#: app/templates/rsvp_guests.html:9
 msgid "RSVP - Confirm Your Attendance"
-msgstr ""
+msgstr "RSVP - Confirme a Sua Presença"
 
-#: app/templates/rsvp_guests.html:10
+#: app/templates/rsvp_guests.html:12
 msgid "Country:"
-msgstr ""
+msgstr "País:"
 
-#: app/templates/rsvp_guests.html:22
+#: app/templates/rsvp_guests.html:16
+msgid "Guests on this invitation:"
+msgstr "Convidados neste convite:"
+
+#: app/templates/rsvp_guests.html:14
 msgid "Current response:"
-msgstr ""
+msgstr "Resposta atual:"
 
-#: app/templates/rsvp_guests.html:34
+#: app/templates/rsvp_guests.html:27
 msgid "Will you attend?"
-msgstr ""
+msgstr "Vai comparecer?"
 
-#: app/templates/rsvp_guests.html:42
+#: app/templates/rsvp_guests.html:33
 msgid "Yes, I'll be there!"
-msgstr ""
+msgstr "Sim, estarei presente!"
 
-#: app/templates/rsvp_guests.html:50
+#: app/templates/rsvp_guests.html:39
 msgid "Sorry, I can't make it"
-msgstr ""
+msgstr "Desculpe, não posso comparecer"
 
-#: app/templates/rsvp_guests.html:61
+#: app/templates/rsvp_guests.html:49
 msgid "Update RSVP"
-msgstr ""
+msgstr "Atualizar RSVP"
 
-#: app/templates/rsvp_guests.html:63
+#: app/templates/rsvp_guests.html:51
 msgid "Submit RSVP"
-msgstr ""
+msgstr "Enviar RSVP"
 
-#: app/templates/rsvp_guests.html:69
+#: app/templates/rsvp_guests.html:56
 msgid "Enter a different code"
-msgstr ""
-
+msgstr "Introduzir um código diferente"
