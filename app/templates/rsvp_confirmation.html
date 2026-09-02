@@ -3,38 +3,60 @@
 {% block title %}{{ _('Thank You') }} - RSVP{% endblock %}
 
 {% block content %}
-<div style="text-align: center; padding: 3rem 1rem;">
-    <h1 style="color: #d4af37; font-size: 3rem;">{{ _('Thank You!') }} 🎉</h1>
-    <p style="font-size: 1.3rem; margin: 2rem 0;">{{ _('Your RSVP has been submitted successfully.') }}</p>
-    
+<section style="text-align:center;">
+    <h1 style="color: var(--color-accent); font-size: 3rem;">{{ _('Thank You!') }} 🎉</h1>
+    <p style="font-size: 1.2rem; margin: 1.5rem 0;">{{ _('Your RSVP has been submitted successfully.') }}</p>
+
     {% if invitation %}
-    <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; max-width: 600px; margin: 2rem auto; text-align: left;">
+    <div class="summary-card" style="max-width: 600px; margin: 2rem auto; text-align: left;">
         <h3 style="margin-bottom: 1rem;">{{ _('RSVP Summary:') }}</h3>
         {% for guest in invitation.guests %}
-        <p>
-            <strong>{{ guest.first_name }} {{ guest.last_name }}:</strong>
-            {% if guest.rsvp %}
-                {% if guest.rsvp.status.status_key == 'ACCEPTED' %}
-                    ✅ {{ _('Attending') }}
-                {% elif guest.rsvp.status.status_key == 'DECLINED' %}
-                    ❌ {{ _('Not attending') }}
+        <div style="margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+            <p style="margin: 0 0 0.3rem 0;">
+                <strong>{{ guest.first_name }} {{ guest.last_name }}:</strong>
+                {% if guest.rsvp %}
+                    {% if guest.rsvp.status.status_key == 'ACCEPTED' %}
+                        ✅ {{ _('Attending') }}
+                    {% elif guest.rsvp.status.status_key == 'DECLINED' %}
+                        ❌ {{ _('Not attending') }}
+                    {% else %}
+                        ⏳ {{ _('Pending') }}
+                    {% endif %}
                 {% else %}
                     ⏳ {{ _('Pending') }}
                 {% endif %}
-            {% else %}
-                ⏳ {{ _('Pending') }}
+            </p>
+
+            {% if guest.rsvp and guest.rsvp.status.status_key == 'ACCEPTED' %}
+                {% if guest.menu_choice %}
+                <p style="margin: 0.2rem 0; font-size: 0.95rem; color: #555;">
+                    🍽️ {{ guest.menu_choice.menu_item.name(current_locale) }}
+                    {% if guest.menu_choice.menu_item.menu_key == 'OTHER' and guest.menu_choice.other_specify %}
+                        — {{ guest.menu_choice.other_specify }}
+                    {% endif %}
+                </p>
+                {% endif %}
+                {% if guest.dietary_restrictions %}
+                <p style="margin: 0.2rem 0; font-size: 0.95rem; color: #555;">
+                    ⚠️
+                    {%- for gdr in guest.dietary_restrictions -%}
+                        {{ gdr.restriction.label(current_locale) }}{% if not loop.last %}, {% endif %}
+                    {%- endfor -%}
+                </p>
+                {% endif %}
+                {% if guest.notes %}
+                <p style="margin: 0.2rem 0; font-size: 0.95rem; color: #555;">📝 {{ guest.notes }}</p>
+                {% endif %}
             {% endif %}
-        </p>
+        </div>
         {% endfor %}
     </div>
-    
-    <p style="margin-top: 2rem;">{{ _('You can return to this page anytime to update your response using code:') }} <strong>{{ invitation.invitation_code }}</strong></p>
+
+    <p style="margin-top: 1.5rem;">{{ _('You can return to this page anytime to update your response using code:') }} <strong>{{ invitation.invitation_code }}</strong></p>
     {% else %}
     <p>{{ _('We look forward to celebrating with you!') }}</p>
     {% endif %}
-    
-    <a href="{{ url_for('main.index') }}" style="display: inline-block; margin-top: 2rem; 
-           padding: 0.75rem 2rem; background: #d4af37; color: white; text-decoration: none; 
-           border-radius: 4px;">{{ _('Return to Home') }}</a>
-</div>
+
+    <a href="{{ url_for('main.index') }}" class="cta-button primary" style="margin-top: 2rem;">{{ _('Return to Home') }}</a>
+</section>
 {% endblock %}

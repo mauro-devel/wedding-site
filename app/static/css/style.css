@@ -5,103 +5,322 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    font-family: 'Georgia', serif;
+    background-color: #f2ede4;
+    color: #2c2c2c;
+    padding: 1.5rem;
 }
 
-nav {
-    background: #f4f4f4;
-    padding: 1rem;
+/* --- Pill navigation --- */
+.pill-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
     margin-bottom: 2rem;
 }
 
-nav a {
-    margin-right: 1rem;
+.pill {
+    border: 1px solid #444;
+    border-radius: 999px;
+    padding: 0.4rem 1.1rem;
     text-decoration: none;
-    color: #333;
+    color: #2c2c2c;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+    white-space: nowrap;
 }
 
-nav a:hover {
+.pill:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.lang-pill.active {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+.pill-spacer {
+    flex-basis: 100%;
+    height: 0;
+}
+
+@media (min-width: 700px) {
+    .pill-spacer {
+        flex-basis: 0;
+        width: 2rem;
+        height: auto;
+    }
+}
+
+/* --- Invitation card (hero + countdown, floral wreath border) --- */
+.invite-card {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto 3rem;
+    min-height: 520px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fbf6ef 0%, #f7f1e8 100%);
+    border-radius: 14px;
+    padding: 1.25rem 0.75rem 2rem;
+    box-shadow: 0 18px 40px rgba(28,28,28,0.08);
+}
+
+.hero {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 4rem 1rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.75rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.6rem 1.75rem;
+    border: 1px solid #2c2c2c;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #2c2c2c;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+}
+
+.cta-button:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.cta-button.primary {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+.cta-button.primary:hover {
+    background: #444;
+}
+
+.invite-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0.5rem 1rem 3rem;
+}
+
+/* --- Flowers arranged in a loose wreath around the card --- */
+.flower {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.flower img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Loose wreath: place flowers around the invite card */
+.flower-1 { top: -30px; left: -40px; width: 150px; transform: rotate(-10deg); }
+.flower-2 { top: -10px; left: 120px; width: 110px; transform: rotate(-8deg); }
+.flower-3 { top: 10px; left: 260px; width: 90px; transform: rotate(5deg); }
+.flower-4 { top: -40px; right: -30px; width: 170px; transform: rotate(12deg); }
+.flower-5 { top: 120px; left: -50px; width: 120px; transform: rotate(-20deg); }
+.flower-6 { top: 140px; right: 30px; width: 140px; transform: rotate(25deg); }
+.flower-7 { top: 220px; left: 40px; width: 100px; transform: rotate(12deg); }
+.flower-8 { top: 240px; right: 60px; width: 130px; transform: rotate(-12deg); }
+.flower-9 { bottom: 110px; left: -60px; width: 180px; transform: rotate(8deg); }
+.flower-10 { bottom: 60px; left: 140px; width: 120px; transform: rotate(-6deg); }
+.flower-11 { bottom: 40px; right: 20px; width: 160px; transform: rotate(6deg); }
+.flower-12 { bottom: 100px; left: -50px; width: 200px; transform: rotate(-10deg); }
+.flower-13 { bottom: -20px; right: -40px; width: 220px; transform: rotate(10deg); }
+.flower-14 { top: 60px; left: -10px; width: 90px; transform: rotate(-30deg); }
+.flower-15 { top: 60px; right: -10px; width: 90px; transform: rotate(30deg); }
+.flower-16 { top: 300px; left: 240px; width: 110px; transform: rotate(8deg); }
+.flower-17 { top: 320px; right: 180px; width: 110px; transform: rotate(-8deg); }
+.flower-18 { left: 50%; top: -80px; transform: translateX(-50%) rotate(0deg); width: 160px; }
+.flower-19 { left: 12%; bottom: -80px; transform: rotate(-20deg); width: 140px; }
+.flower-20 { right: 12%; bottom: -80px; transform: rotate(20deg); width: 140px; }
+.flower-21 { left: 50%; bottom: -40px; transform: translateX(-50%) rotate(6deg); width: 120px; }
+
+
+/* --- Countdown --- */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.countdown-unit {
+    text-align: center;
+}
+
+.countdown-unit span {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #2c2c2c;
+}
+
+.countdown-unit label {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.8rem;
     color: #666;
 }
 
-main {
-    padding: 2rem 0;
+.countdown-arrived {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
 }
 
-h1 {
-    margin-bottom: 1rem;
-    color: #333;
+/* --- Info sections --- */
+section {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
 }
 
+section h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+section h3 {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.info-grid, .gift-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card, .gift-card {
+    background: #fff;
+    border: 1px solid #e2ddd2;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.info-card a, .gift-card a {
+    color: #2c2c2c;
+}
+
+.info-extra ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+.info-extra p, .info-extra li {
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.iban {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f2ede4;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+}
+
+/* --- RSVP forms (used on rsvp.html / rsvp_guests.html / rsvp_confirmation.html) --- */
 form {
-    max-width: 400px;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #e2ddd2;
+    border-radius: 8px;
 }
 
 label {
     display: block;
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
 }
 
-input {
+input[type="text"] {
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #ddd;
     border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #d4af37;
 }
 
 button {
-    background: #333;
+    background: #2c2c2c;
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 999px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s;
+    width: 100%;
 }
 
 button:hover {
-    background: #555;
+    background: #444;
 }
 
-footer {
-    margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
-    text-align: center;
-    color: #666;
-}
-
+/* --- Flash messages --- */
 .flash {
+    max-width: 900px;
+    margin: 0 auto 1rem;
     padding: 1rem;
-    margin-bottom: 1rem;
     border-radius: 4px;
     border-left: 4px solid;
 }
 
-.flash-success {
-    background-color: #d4edda;
-    border-color: #28a745;
-    color: #155724;
+.flash-success { background: #d4edda; border-color: #28a745; color: #155724; }
+.flash-error   { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+.flash-info    { background: #d1ecf1; border-color: #17a2b8; color: #0c5460; }
+.flash-warning { background: #fff3cd; border-color: #ffc107; color: #856404; }
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #888;
+    font-size: 0.85rem;
 }
 
-.flash-error {
-    background-color: #f8d7da;
-    border-color: #dc3545;
-    color: #721c24;
-}
-
-.flash-info {
-    background-color: #d1ecf1;
-    border-color: #17a2b8;
-    color: #0c5460;
-}
-
-.flash-warning {
-    background-color: #fff3cd;
-    border-color: #ffc107;
-    color: #856404;
+/* --- Mobile --- */
+@media (max-width: 600px) {
+    .invite-card { min-height: 380px; }
+    .hero h1 { font-size: 2rem; }
+    .flower { width: 80px !important; opacity: 0.85; }
+    .countdown { gap: 1rem; }
+    .countdown-unit span { font-size: 1.6rem; }
 }

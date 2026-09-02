@@ -3,9 +3,119 @@
 {% block title %}{{ _('Welcome') }} - Ana & Mauricio{% endblock %}
 
 {% block content %}
-<h1>{{ _('Welcome to Our Wedding!') }}</h1>
-<p>{{ _("We're getting married and we'd love for you to join us!") }}</p>
-<a href="{{ url_for('main.rsvp') }}" style="display: inline-block; margin-top: 1rem; 
-       padding: 0.75rem 2rem; background: #d4af37; color: white; text-decoration: none; 
-       border-radius: 4px;">{{ _('RSVP') }}</a>
+
+<div class="invite-card" id="inicio">
+
+    <div class="flower flower-1"><img src="{{ url_for('static', filename='images/flowers/1.png') }}" alt=""></div>
+    <div class="flower flower-2"><img src="{{ url_for('static', filename='images/flowers/3.png') }}" alt=""></div>
+    <div class="flower flower-3"><img src="{{ url_for('static', filename='images/flowers/5.png') }}" alt=""></div>
+    <div class="flower flower-4"><img src="{{ url_for('static', filename='images/flowers/6.png') }}" alt=""></div>
+    <div class="flower flower-5"><img src="{{ url_for('static', filename='images/flowers/7.png') }}" alt=""></div>
+    <div class="flower flower-6"><img src="{{ url_for('static', filename='images/flowers/8.png') }}" alt=""></div>
+    <div class="flower flower-7"><img src="{{ url_for('static', filename='images/flowers/9.png') }}" alt=""></div>
+    <div class="flower flower-8"><img src="{{ url_for('static', filename='images/flowers/10.png') }}" alt=""></div>
+    <div class="flower flower-9"><img src="{{ url_for('static', filename='images/flowers/11.png') }}" alt=""></div>
+    <div class="flower flower-10"><img src="{{ url_for('static', filename='images/flowers/12.png') }}" alt=""></div>
+    <div class="flower flower-11"><img src="{{ url_for('static', filename='images/flowers/13.png') }}" alt=""></div>
+    <div class="flower flower-12"><img src="{{ url_for('static', filename='images/flowers/14.png') }}" alt=""></div>
+    <div class="flower flower-13"><img src="{{ url_for('static', filename='images/flowers/15.png') }}" alt=""></div>
+    <div class="flower flower-14"><img src="{{ url_for('static', filename='images/flowers/16.png') }}" alt=""></div>
+    <div class="flower flower-15"><img src="{{ url_for('static', filename='images/flowers/17.png') }}" alt=""></div>
+    <div class="flower flower-16"><img src="{{ url_for('static', filename='images/flowers/18.png') }}" alt=""></div>
+    <div class="flower flower-17"><img src="{{ url_for('static', filename='images/flowers/19.png') }}" alt=""></div>
+    <div class="flower flower-18"><img src="{{ url_for('static', filename='images/flowers/20.png') }}" alt=""></div>
+    <div class="flower flower-19"><img src="{{ url_for('static', filename='images/flowers/21.png') }}" alt=""></div>
+    <div class="flower flower-20"><img src="{{ url_for('static', filename='images/flowers/2.png') }}" alt=""></div>
+    <div class="flower flower-21"><img src="{{ url_for('static', filename='images/flowers/4.png') }}" alt=""></div>
+
+    <section class="hero">
+        <h1>Ana &amp; Mauricio</h1>
+        <p>{{ _("We're getting married and we'd love for you to join us!") }}</p>
+    </section>
+
+    <div class="invite-content">
+        <div id="countdown" class="countdown" data-wedding-date="{{ wedding_datetime_iso }}">
+            <div class="countdown-unit">
+                <span id="cd-days">--</span>
+                <label>{{ _('days') }}</label>
+            </div>
+            <div class="countdown-unit">
+                <span id="cd-hours">--</span>
+                <label>{{ _('h') }}</label>
+            </div>
+            <div class="countdown-unit">
+                <span id="cd-minutes">--</span>
+                <label>{{ _('min') }}</label>
+            </div>
+            <div class="countdown-unit">
+                <span id="cd-seconds">--</span>
+                <label>{{ _('seg') }}</label>
+            </div>
+        </div>
+
+        <a href="{{ url_for('main.rsvp') }}" class="cta-button primary">{{ _('RSVP') }}</a>
+    </div>
+</div>
+
+<section id="informaciones">
+    <h2>{{ _('Details') }}</h2>
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>{{ _('Ceremony') }}</h3>
+            <p>15:00</p>
+            <p><a href="{{ ceremony_maps_url }}" target="_blank" rel="noopener">{{ _('Church, Porto') }}</a></p>
+        </div>
+        <div class="info-card">
+            <h3>{{ _('Reception') }}</h3>
+            <p><a href="{{ party_maps_url }}" target="_blank" rel="noopener">{{ _('Venue, Cete') }}</a></p>
+        </div>
+        <div class="info-card">
+            <h3>{{ _('Dress code') }}</h3>
+            <p>{{ _('Formal') }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="info-extra" id="info-adicional">
+    <h2>{{ _('Good to know') }}</h2>
+
+    <h3>{{ _('Shuttle bus') }}</h3>
+    <p>{{ _('A shuttle bus will run between the church and the reception venue.') }}</p>
+    <p>{{ _('Return shuttles depart at midnight and 3am, with drop-off points in Penafiel and central Porto.') }}</p>
+
+    <h3>{{ _('Getting from the airport') }}</h3>
+    <ul>
+        <li>{{ _('Uber — pick-up at the terminal') }}</li>
+        <li>{{ _('Taxi — at the terminal') }}</li>
+        <li>{{ _('Metro — buy a Zone 3 Andante ticket') }}</li>
+    </ul>
+
+    <h3>{{ _('Where to stay') }}</h3>
+    <p>{{ _('We recommend staying in the historic city center, near the metro line.') }}</p>
+
+    <h3>{{ _('Good to bring') }}</h3>
+    <p>{{ _('April can be cold and rainy in Portugal — bring a coat and umbrella.') }}</p>
+</section>
+
+<section id="regalo">
+    <h2>{{ _('Gift & Playlist') }}</h2>
+    <div class="gift-grid">
+        <div class="gift-card">
+            <h3>{{ _('Gift') }}</h3>
+            <p>{{ _('IBAN:') }}</p>
+            <code class="iban">{{ iban }}</code>
+        </div>
+        <div class="gift-card">
+            <h3>{{ _('Shared playlist') }}</h3>
+            <a class="cta-button" href="{{ playlist_url }}" target="_blank" rel="noopener">
+                {{ _('Add your songs') }}
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
 {% endblock %}

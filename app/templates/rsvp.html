@@ -3,16 +3,18 @@
 {% block title %}{{ _('RSVP') }} - {{ _('Wedding Website') }}{% endblock %}
 
 {% block content %}
-<h1>{{ _('RSVP') }}</h1>
-<p>{{ _('Please enter your invitation code to RSVP.') }}</p>
+<section>
+    <h1>{{ _('RSVP') }}</h1>
+    <p>{{ _('Please enter your invitation code to RSVP.') }}</p>
 
-<form method="POST" action="{{ url_for('main.rsvp') }}">
-    <label for="invitation_code">{{ _('Invitation Code:') }}</label>
-    <input type="text" 
-           id="invitation_code" 
-           name="invitation_code" 
-           placeholder="{{ _('Enter your code') }}"
-           required>
-    <button type="submit">{{ _('Continue') }}</button>
-</form>
+    <form method="POST" action="{{ url_for('main.rsvp') }}">
+        <label for="invitation_code">{{ _('Invitation Code:') }}</label>
+        <input type="text"
+               id="invitation_code"
+               name="invitation_code"
+               placeholder="{{ _('Enter your code') }}"
+               required>
+        <button type="submit">{{ _('Continue') }}</button>
+    </form>
+</section>
 {% endblock %}

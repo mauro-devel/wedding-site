@@ -48,7 +48,12 @@ def create_app(config_name='development'):
     def inject_locale():
         return dict(
             get_locale=lambda: get_locale(),
-            current_locale=get_locale()
+            current_locale=lambda: get_locale(),
+            wedding_date_iso=app.config.get('WEDDING_DATE'),
+            ceremony_maps_url=app.config.get('CEREMONY_MAPS_URL'),
+            party_maps_url=app.config.get('PARTY_MAPS_URL'),
+            iban=app.config.get('WEDDING_IBAN'),
+            playlist_url=app.config.get('PLAYLIST_URL'),
         )
     
     # Register blueprints

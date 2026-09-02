@@ -4,16 +4,22 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent.parent
 
 class Config:
+    WEDDING_DATE = os.environ.get('WEDDING_DATE') or '2027-04-03T15:00:00+01:00'
+    CEREMONY_MAPS_URL = os.environ.get('CEREMONY_MAPS_URL') or 'https://maps.google.com/?q=Church+Porto'
+    PARTY_MAPS_URL = os.environ.get('PARTY_MAPS_URL') or 'https://maps.google.com/?q=Venue+Cete'
+    WEDDING_IBAN = os.environ.get('WEDDING_IBAN') or 'PT50 0000 0000 0000 0000 0000 0'
+    PLAYLIST_URL = os.environ.get('PLAYLIST_URL') or 'https://open.spotify.com/playlist/your-playlist-id'
+
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     BABEL_DEFAULT_LOCALE = 'es'
-    BABEL_TRANSLATION_DIRECTORIES = 'tranlations'
+    BABEL_TRANSLATION_DIRECTORIES = str(BASE_DIR / 'app' / 'translations')
     LANGUAGES = {
-        'es': 'Español', 
+        'es': 'Español',
         'pt_PT': 'Português'
     }
-    
+
     UPLOAD_FOLDER = BASE_DIR / 'app' / 'static' / 'uploads'
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max upload
     ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}

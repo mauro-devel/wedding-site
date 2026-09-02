@@ -1,14 +1,10 @@
-# Portuguese translations for PROJECT.
-# Copyright (C) 2026 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
-#
+
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-21 13:17+0000\n"
-"PO-Revision-Date: 2026-02-21 13:17+0000\n"
+"POT-Creation-Date: 2026-09-01 15:52+0100\n"
+"PO-Revision-Date: 2026-07-29 00:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt_PT\n"
 "Language-Team: pt_PT <LL@li.org>\n"
@@ -18,61 +14,173 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: app/routes/main.py:23
+#: app/routes/main.py:27
 msgid "Invitation code not found. Please check and try again."
-msgstr "Código de convite não encontrado. Por favor, verifique e tente novamente."
+msgstr "Código de convite não encontrado. Verifica e tenta novamente."
 
-#: app/routes/main.py:33
-msgid "You have already submitted a confirmation. You can update your response below."
-msgstr "Já submeteu uma confirmação. Pode atualizar a sua resposta abaixo."
+#: app/routes/main.py:37
+msgid ""
+"You have already submitted a confirmation. You can update your response "
+"below."
+msgstr "Já enviaste uma confirmação. Podes atualizar a tua resposta abaixo."
 
-#: app/routes/main.py:47
+#: app/routes/main.py:51
 msgid "Please enter your invitation code first."
-msgstr "Por favor, introduza primeiro o seu código de convite."
+msgstr "Por favor, introduz primeiro o teu código de convite."
 
-#: app/routes/main.py:89
+#: app/routes/main.py:121
 msgid "RSVP submitted successfully!"
-msgstr "RSVP enviado com sucesso!"
+msgstr "Confirmação enviada com sucesso!"
 
 #: app/templates/base.html:12
 msgid "Home"
 msgstr "Início"
 
-#: app/templates/base.html:13 app/templates/index.html:10
-#: app/templates/rsvp.html:3 app/templates/rsvp.html:6
+#: app/templates/base.html:13 app/templates/index.html:31
+#: app/templates/rsvp.html:3 app/templates/rsvp.html:7
 #: app/templates/rsvp_guests.html:3
 msgid "RSVP"
-msgstr "Confirmação"
+msgstr "Confirmar presença"
 
 #: app/templates/index.html:3
 msgid "Welcome"
 msgstr "Bem-vindos"
 
-#: app/templates/index.html:8
-msgid "Welcome to Our Wedding!"
-msgstr "Bem-vindos ao Nosso Casamento!"
-
-#: app/templates/index.html:9
+#: app/templates/index.html:10
 msgid "We're getting married and we'd love for you to join us!"
-msgstr "Vamos casar e adoraríamos que nos acompanhassem!"
+msgstr "Vamos casar-nos e adorávamos que estivesses connosco!"
 
-#: app/templates/index.html:11
-msgid "RSVP Now"
-msgstr "Confirmar Presença"
+#: app/templates/index.html:15
+msgid "Days"
+msgstr "Dias"
 
-#: app/templates/rsvp.html:7
+#: app/templates/index.html:19
+msgid "Hours"
+msgstr "Horas"
+
+#: app/templates/index.html:23
+msgid "Minutes"
+msgstr "Minutos"
+
+#: app/templates/index.html:27
+msgid "Seconds"
+msgstr "Segundos"
+
+#: app/templates/index.html:35
+msgid "Details"
+msgstr ""
+
+#: app/templates/index.html:38
+msgid "Ceremony"
+msgstr ""
+
+#: app/templates/index.html:40
+msgid "Church, Porto"
+msgstr ""
+
+#: app/templates/index.html:43
+msgid "Reception"
+msgstr ""
+
+#: app/templates/index.html:44
+msgid "Venue, Cete"
+msgstr ""
+
+#: app/templates/index.html:47
+msgid "Dress code"
+msgstr ""
+
+#: app/templates/index.html:48
+msgid "Formal"
+msgstr ""
+
+#: app/templates/index.html:54
+msgid "Good to know"
+msgstr ""
+
+#: app/templates/index.html:56
+msgid "Shuttle bus"
+msgstr ""
+
+#: app/templates/index.html:57
+msgid "A shuttle bus will run between the church and the reception venue."
+msgstr ""
+
+#: app/templates/index.html:58
+msgid ""
+"Return shuttles depart at midnight and 3am, with drop-off points in "
+"Penafiel and central Porto."
+msgstr ""
+
+#: app/templates/index.html:60
+msgid "Getting from the airport"
+msgstr ""
+
+#: app/templates/index.html:62
+msgid "Uber — pick-up at the terminal"
+msgstr ""
+
+#: app/templates/index.html:63
+msgid "Taxi — at the terminal"
+msgstr ""
+
+#: app/templates/index.html:64
+msgid "Metro — buy a Zone 3 Andante ticket"
+msgstr ""
+
+#: app/templates/index.html:67
+msgid "Where to stay"
+msgstr ""
+
+#: app/templates/index.html:68
+msgid "We recommend staying in the historic city center, near the metro line."
+msgstr ""
+
+#: app/templates/index.html:70
+msgid "Good to bring"
+msgstr ""
+
+#: app/templates/index.html:71
+msgid "April can be cold and rainy in Portugal — bring a coat and umbrella."
+msgstr ""
+
+#: app/templates/index.html:75
+msgid "Gift & Playlist"
+msgstr ""
+
+#: app/templates/index.html:78
+msgid "Gift"
+msgstr ""
+
+#: app/templates/index.html:79
+msgid "IBAN:"
+msgstr ""
+
+#: app/templates/index.html:83
+msgid "Shared playlist"
+msgstr ""
+
+#: app/templates/index.html:85
+msgid "Add your songs"
+msgstr ""
+
+#: app/templates/rsvp.html:3
+msgid "Wedding Website"
+msgstr "Site do casamento"
+
+#: app/templates/rsvp.html:8
 msgid "Please enter your invitation code to RSVP."
-msgstr "Por favor, introduza o seu código de convite para confirmar presença."
+msgstr "Introduz o teu código de convite para confirmar a presença."
 
-#: app/templates/rsvp.html:10
+#: app/templates/rsvp.html:11 app/templates/rsvp_guests.html:10
 msgid "Invitation Code:"
-msgstr "Código de Convite:"
+msgstr "Código de convite:"
 
-#: app/templates/rsvp.html:14
+#: app/templates/rsvp.html:15
 msgid "Enter your code"
-msgstr "Introduza o seu código"
+msgstr "Introduz o teu código"
 
-#: app/templates/rsvp.html:16
+#: app/templates/rsvp.html:17
 msgid "Continue"
 msgstr "Continuar"
 
@@ -81,81 +189,123 @@ msgid "Thank You"
 msgstr "Obrigado"
 
 #: app/templates/rsvp_confirmation.html:7
+#, fuzzy
 msgid "Thank You!"
-msgstr "Obrigado!"
+msgstr "Obrigado"
 
 #: app/templates/rsvp_confirmation.html:8
 msgid "Your RSVP has been submitted successfully."
-msgstr "O seu RSVP foi enviado com sucesso."
+msgstr "A tua confirmação foi enviada com sucesso."
 
 #: app/templates/rsvp_confirmation.html:12
 msgid "RSVP Summary:"
-msgstr "Resumo do RSVP:"
+msgstr "Resumo da confirmação:"
 
-#: app/templates/rsvp_confirmation.html:17 app/templates/rsvp_guests.html:18
+#: app/templates/rsvp_confirmation.html:19 app/templates/rsvp_guests.html:25
 msgid "Attending"
-msgstr "Confirmado"
+msgstr "Vai comparecer"
 
-#: app/templates/rsvp_confirmation.html:19 app/templates/rsvp_guests.html:20
+#: app/templates/rsvp_confirmation.html:21 app/templates/rsvp_guests.html:27
 msgid "Not attending"
-msgstr "Não confirmado"
+msgstr "Não vai comparecer"
 
-#: app/templates/rsvp_confirmation.html:21 app/templates/rsvp_guests.html:22
+#: app/templates/rsvp_confirmation.html:23
+#: app/templates/rsvp_confirmation.html:26 app/templates/rsvp_guests.html:29
 msgid "Pending"
 msgstr "Pendente"
 
-#: app/templates/rsvp_confirmation.html:29
+#: app/templates/rsvp_confirmation.html:55
 msgid "You can return to this page anytime to update your response using code:"
-msgstr "Pode voltar a esta página a qualquer momento para atualizar a sua resposta usando o código:"
+msgstr ""
+"Podes voltar a esta página a qualquer momento para atualizar a tua "
+"resposta usando o código:"
 
-#: app/templates/rsvp_confirmation.html:31
+#: app/templates/rsvp_confirmation.html:57
 msgid "We look forward to celebrating with you!"
-msgstr "Esperamos celebrar convosco!"
+msgstr "Estamos ansiosos por celebrar contigo!"
 
-#: app/templates/rsvp_confirmation.html:35
+#: app/templates/rsvp_confirmation.html:60
 msgid "Return to Home"
-msgstr "Voltar ao Início"
+msgstr "Voltar ao início"
 
-#: app/templates/rsvp_guests.html:6
+#: app/templates/rsvp_guests.html:3
 msgid "Confirm Guests"
-msgstr "Confirmar Convidados"
+msgstr "Confirmar convidados"
 
-#: app/templates/rsvp_guests.html:9
+#: app/templates/rsvp_guests.html:7
 msgid "RSVP - Confirm Your Attendance"
-msgstr "RSVP - Confirme a Sua Presença"
+msgstr "Confirmação de presença"
 
-#: app/templates/rsvp_guests.html:12
+#: app/templates/rsvp_guests.html:11
 msgid "Country:"
 msgstr "País:"
 
-#: app/templates/rsvp_guests.html:16
+#: app/templates/rsvp_guests.html:15
 msgid "Guests on this invitation:"
 msgstr "Convidados neste convite:"
 
-#: app/templates/rsvp_guests.html:14
+#: app/templates/rsvp_guests.html:23
 msgid "Current response:"
 msgstr "Resposta atual:"
 
-#: app/templates/rsvp_guests.html:27
+#: app/templates/rsvp_guests.html:35
 msgid "Will you attend?"
-msgstr "Vai comparecer?"
+msgstr "Vais comparecer?"
 
-#: app/templates/rsvp_guests.html:33
+#: app/templates/rsvp_guests.html:41
 msgid "Yes, I'll be there!"
-msgstr "Sim, estarei presente!"
+msgstr "Sim, estarei lá!"
 
-#: app/templates/rsvp_guests.html:39
+#: app/templates/rsvp_guests.html:48
 msgid "Sorry, I can't make it"
-msgstr "Desculpe, não posso comparecer"
-
-#: app/templates/rsvp_guests.html:49
-msgid "Update RSVP"
-msgstr "Atualizar RSVP"
-
-#: app/templates/rsvp_guests.html:51
-msgid "Submit RSVP"
-msgstr "Enviar RSVP"
+msgstr "Desculpa, não poderei ir"
 
 #: app/templates/rsvp_guests.html:56
+msgid "Dietary Preference"
+msgstr ""
+
+#: app/templates/rsvp_guests.html:74
+msgid "Please specify"
+msgstr ""
+
+#: app/templates/rsvp_guests.html:82
+msgid "Allergies / Intolerances"
+msgstr ""
+
+#: app/templates/rsvp_guests.html:97
+msgid "Notes"
+msgstr "Notas"
+
+#: app/templates/rsvp_guests.html:99
+msgid ""
+"Let us know where you are staying, information about children attending, "
+"or anything else we should know."
+msgstr ""
+"Diz-nos onde vais ficar hospedado, informação sobre crianças que vão "
+"participar, ou qualquer outra coisa que devamos saber."
+
+#: app/templates/rsvp_guests.html:104
+msgid "E.g. staying at Hotel X, bringing 2 children (ages 4 and 7)..."
+msgstr "Ex. fico hospedado no Hotel X, vou com 2 crianças (4 e 7 anos)..."
+
+#: app/templates/rsvp_guests.html:112
+msgid "Update RSVP"
+msgstr "Atualizar confirmação"
+
+#: app/templates/rsvp_guests.html:114
+msgid "Submit RSVP"
+msgstr "Enviar confirmação"
+
+#: app/templates/rsvp_guests.html:120
 msgid "Enter a different code"
-msgstr "Introduzir um código diferente"
+msgstr "Introduzir outro código"
+
+#~ msgid "Welcome to Our Wedding!"
+#~ msgstr "Bem-vindos ao nosso casamento!"
+
+#~ msgid "Menu Choice"
+#~ msgstr "Escolha de menu"
+
+#~ msgid "Dietary Restrictions / Allergies"
+#~ msgstr "Restrições alimentares / Alergias"
+

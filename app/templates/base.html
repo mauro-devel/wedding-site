@@ -8,37 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="{{ url_for('main.index') }}">{{ _('Home') }}</a>
-        <a href="{{ url_for('main.rsvp') }}">{{ _('RSVP') }}</a>
-        |
-        <a href="{{ url_for('main.set_language', lang='es') }}" 
-           {% if get_locale() == 'es' %}style="font-weight: bold; color: #d4af37;"{% endif %}>
-            Español
-        </a>
-        <a href="{{ url_for('main.set_language', lang='pt_PT') }}"
-           {% if get_locale() == 'pt_PT' %}style="font-weight: bold; color: #d4af37;"{% endif %}>
-            Português
-        </a>
+    <nav class="pill-nav">
+        <a class="pill" href="{{ url_for('main.index') }}#inicio">{{ _('Home') }}</a>
+        <a class="pill" href="{{ url_for('main.index') }}#invitacion">{{ _('Invitation') }}</a>
+        <a class="pill" href="{{ url_for('main.index') }}#informaciones">{{ _('Details') }}</a>
+        <a class="pill" href="{{ url_for('main.rsvp') }}">{{ _('RSVP') }}</a>
+        <a class="pill" href="{{ url_for('main.index') }}#regalo">{{ _('Gift') }}</a>
+        <span class="pill-spacer"></span>
+        <a class="pill lang-pill {{ 'active' if get_locale() == 'es' }}"
+           href="{{ url_for('main.set_language', lang='es') }}">ESP</a>
+        <a class="pill lang-pill {{ 'active' if get_locale() == 'pt_PT' }}"
+           href="{{ url_for('main.set_language', lang='pt_PT') }}">PT</a>
     </nav>
-    
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <main>
-        <!-- Flash messages -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                <div class="flash flash-{{ category }}">
-                    {{ message }}
-                </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        
         {% block content %}{% endblock %}
     </main>
-    
+
     <footer>
-        <p>&copy; 2026 Ana & Mauricio</p>
+        <p>&copy; 2028 Ana &amp; Mauricio</p>
     </footer>
+
+    {% block scripts %}{% endblock %}
 </body>
 </html>

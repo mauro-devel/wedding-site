@@ -22,7 +22,6 @@ CREATE TABLE guest (
     last_name TEXT NOT NULL,
     email TEXT,
     is_primary_guest INTEGER NOT NULL DEFAULT 0,
-    is_vegetarian INTEGER NOT NULL DEFAULT 0,
     notes TEXT,
     FOREIGN KEY (invitation_id) REFERENCES invitation(id) ON DELETE CASCADE
 );
@@ -73,6 +72,7 @@ CREATE TABLE menu_item_translation (
 CREATE TABLE guest_menu_choice (
     guest_id INTEGER PRIMARY KEY,
     menu_item_id INTEGER NOT NULL,
+    other_specify TEXT,
     FOREIGN KEY (guest_id) REFERENCES guest(id) ON DELETE CASCADE,
     FOREIGN KEY (menu_item_id) REFERENCES menu_item(id)
 );
