@@ -3,7 +3,7 @@
 {% block title %}{{ _('RSVP') }} - {{ _('Wedding Website') }}{% endblock %}
 
 {% block content %}
-<section>
+<div class="page-card">
     <h1>{{ _('RSVP') }}</h1>
     <p>{{ _('Please enter your invitation code to RSVP.') }}</p>
 
@@ -16,5 +16,5 @@
                required>
         <button type="submit">{{ _('Continue') }}</button>
     </form>
-</section>
+</div>
 {% endblock %}

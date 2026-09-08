@@ -19,6 +19,8 @@ def index():
         party_maps_url=current_app.config['PARTY_MAPS_URL'],
         playlist_url=current_app.config['PLAYLIST_URL'],
         iban=current_app.config['WEDDING_IBAN'],
+        nib=current_app.config['WEDDING_NIB'],
+        swift=current_app.config['WEDDING_SWIFT'],
     )
 
 @bp.route('/rsvp', methods=['GET', 'POST'])

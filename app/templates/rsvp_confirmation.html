@@ -3,15 +3,15 @@
 {% block title %}{{ _('Thank You') }} - RSVP{% endblock %}
 
 {% block content %}
-<section style="text-align:center;">
-    <h1 style="color: var(--color-accent); font-size: 3rem;">{{ _('Thank You!') }} 🎉</h1>
-    <p style="font-size: 1.2rem; margin: 1.5rem 0;">{{ _('Your RSVP has been submitted successfully.') }}</p>
+<div class="page-card" style="text-align:center; max-width: 640px;">
+    <h1 style="color: #d4af37; font-size: 2.5rem;">{{ _('Thank You!') }}</h1>
+    <p style="font-size: 1.1rem; margin: 1rem 0 1.5rem; color: #555;">{{ _('Your RSVP has been submitted successfully.') }}</p>
 
     {% if invitation %}
-    <div class="summary-card" style="max-width: 600px; margin: 2rem auto; text-align: left;">
+    <div class="summary-card" style="text-align: left;">
         <h3 style="margin-bottom: 1rem;">{{ _('RSVP Summary:') }}</h3>
         {% for guest in invitation.guests %}
-        <div style="margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+        <div style="margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid #eef;">
             <p style="margin: 0 0 0.3rem 0;">
                 <strong>{{ guest.first_name }} {{ guest.last_name }}:</strong>
                 {% if guest.rsvp %}
@@ -27,36 +27,18 @@
                 {% endif %}
             </p>
 
-            {% if guest.rsvp and guest.rsvp.status.status_key == 'ACCEPTED' %}
-                {% if guest.menu_choice %}
-                <p style="margin: 0.2rem 0; font-size: 0.95rem; color: #555;">
-                    🍽️ {{ guest.menu_choice.menu_item.name(current_locale) }}
-                    {% if guest.menu_choice.menu_item.menu_key == 'OTHER' and guest.menu_choice.other_specify %}
-                        — {{ guest.menu_choice.other_specify }}
-                    {% endif %}
-                </p>
-                {% endif %}
-                {% if guest.dietary_restrictions %}
-                <p style="margin: 0.2rem 0; font-size: 0.95rem; color: #555;">
-                    ⚠️
-                    {%- for gdr in guest.dietary_restrictions -%}
-                        {{ gdr.restriction.label(current_locale) }}{% if not loop.last %}, {% endif %}
-                    {%- endfor -%}
-                </p>
-                {% endif %}
-                {% if guest.notes %}
-                <p style="margin: 0.2rem 0; font-size: 0.95rem; color: #555;">📝 {{ guest.notes }}</p>
-                {% endif %}
+            {% if guest.rsvp and guest.rsvp.status.status_key == 'ACCEPTED' and guest.notes %}
+            <p style="margin: 0.2rem 0; font-size: 0.95rem; color: #555;">{{ guest.notes }}</p>
             {% endif %}
         </div>
         {% endfor %}
     </div>
 
-    <p style="margin-top: 1.5rem;">{{ _('You can return to this page anytime to update your response using code:') }} <strong>{{ invitation.invitation_code }}</strong></p>
+    <p style="margin-top: 1rem;">{{ _('You can return to this page anytime to update your response using code:') }} <strong>{{ invitation.invitation_code }}</strong></p>
     {% else %}
     <p>{{ _('We look forward to celebrating with you!') }}</p>
     {% endif %}
 
-    <a href="{{ url_for('main.index') }}" class="cta-button primary" style="margin-top: 2rem;">{{ _('Return to Home') }}</a>
-</section>
+    <a href="{{ url_for('main.index') }}" class="cta-button primary" style="margin-top: 1.5rem;">{{ _('Return to Home') }}</a>
+</div>
 {% endblock %}

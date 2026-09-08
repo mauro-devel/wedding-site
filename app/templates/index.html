@@ -6,28 +6,6 @@
 
 <div class="invite-card" id="inicio">
 
-    <div class="flower flower-1"><img src="{{ url_for('static', filename='images/flowers/1.png') }}" alt=""></div>
-    <div class="flower flower-2"><img src="{{ url_for('static', filename='images/flowers/3.png') }}" alt=""></div>
-    <div class="flower flower-3"><img src="{{ url_for('static', filename='images/flowers/5.png') }}" alt=""></div>
-    <div class="flower flower-4"><img src="{{ url_for('static', filename='images/flowers/6.png') }}" alt=""></div>
-    <div class="flower flower-5"><img src="{{ url_for('static', filename='images/flowers/7.png') }}" alt=""></div>
-    <div class="flower flower-6"><img src="{{ url_for('static', filename='images/flowers/8.png') }}" alt=""></div>
-    <div class="flower flower-7"><img src="{{ url_for('static', filename='images/flowers/9.png') }}" alt=""></div>
-    <div class="flower flower-8"><img src="{{ url_for('static', filename='images/flowers/10.png') }}" alt=""></div>
-    <div class="flower flower-9"><img src="{{ url_for('static', filename='images/flowers/11.png') }}" alt=""></div>
-    <div class="flower flower-10"><img src="{{ url_for('static', filename='images/flowers/12.png') }}" alt=""></div>
-    <div class="flower flower-11"><img src="{{ url_for('static', filename='images/flowers/13.png') }}" alt=""></div>
-    <div class="flower flower-12"><img src="{{ url_for('static', filename='images/flowers/14.png') }}" alt=""></div>
-    <div class="flower flower-13"><img src="{{ url_for('static', filename='images/flowers/15.png') }}" alt=""></div>
-    <div class="flower flower-14"><img src="{{ url_for('static', filename='images/flowers/16.png') }}" alt=""></div>
-    <div class="flower flower-15"><img src="{{ url_for('static', filename='images/flowers/17.png') }}" alt=""></div>
-    <div class="flower flower-16"><img src="{{ url_for('static', filename='images/flowers/18.png') }}" alt=""></div>
-    <div class="flower flower-17"><img src="{{ url_for('static', filename='images/flowers/19.png') }}" alt=""></div>
-    <div class="flower flower-18"><img src="{{ url_for('static', filename='images/flowers/20.png') }}" alt=""></div>
-    <div class="flower flower-19"><img src="{{ url_for('static', filename='images/flowers/21.png') }}" alt=""></div>
-    <div class="flower flower-20"><img src="{{ url_for('static', filename='images/flowers/2.png') }}" alt=""></div>
-    <div class="flower flower-21"><img src="{{ url_for('static', filename='images/flowers/4.png') }}" alt=""></div>
-
     <section class="hero">
         <h1>Ana &amp; Mauricio</h1>
         <p>{{ _("We're getting married and we'd love for you to join us!") }}</p>
@@ -52,63 +30,105 @@
                 <label>{{ _('seg') }}</label>
             </div>
         </div>
-
         <a href="{{ url_for('main.rsvp') }}" class="cta-button primary">{{ _('RSVP') }}</a>
     </div>
 </div>
 
 <section id="informaciones">
-    <h2>{{ _('Details') }}</h2>
+    <h2>{{ _('Detalles') }}</h2>
     <div class="info-grid">
         <div class="info-card">
+            <div class="info-icon">
+                <img src="{{ url_for('static', filename='images/icons/Iglesia.png') }}" alt="">
+            </div>
             <h3>{{ _('Ceremony') }}</h3>
-            <p>15:00</p>
-            <p><a href="{{ ceremony_maps_url }}" target="_blank" rel="noopener">{{ _('Church, Porto') }}</a></p>
+            <p><a href="{{ ceremony_maps_url }}" target="_blank" rel="noopener">{{ _('Church of Santa Clara') }}</a></p>
+            <p class="info-meta">Largo Primeiro de Dezembro, 4000-404, Porto</p>
+            <p class="info-meta">13:00 h</p>
         </div>
         <div class="info-card">
+            <div class="info-icon info-icon--party">
+                <img class="icon-primary" src="{{ url_for('static', filename='images/icons/fiesta.png') }}" alt="">
+                <img class="icon-accent" src="{{ url_for('static', filename='images/icons/cocktail.png') }}" alt="">
+            </div>
             <h3>{{ _('Reception') }}</h3>
-            <p><a href="{{ party_maps_url }}" target="_blank" rel="noopener">{{ _('Venue, Cete') }}</a></p>
+            <p><a href="{{ party_maps_url }}" target="_blank" rel="noopener">Quinta do Barão</a></p>
+            <p class="info-meta">Av. Senhora do Vale, S/N, Cete 4580, Paredes</p>         
         </div>
         <div class="info-card">
+            <div class="info-icon">
+                <img src="{{ url_for('static', filename='images/icons/Dress-code.png') }}" alt="">
+            </div>
             <h3>{{ _('Dress code') }}</h3>
-            <p>{{ _('Formal') }}</p>
+            <p class="info-meta">Formal</p>
         </div>
     </div>
 </section>
 
 <section class="info-extra" id="info-adicional">
-    <h2>{{ _('Good to know') }}</h2>
+    <h2>{{ _('Additional Information') }}</h2>
 
-    <h3>{{ _('Shuttle bus') }}</h3>
-    <p>{{ _('A shuttle bus will run between the church and the reception venue.') }}</p>
-    <p>{{ _('Return shuttles depart at midnight and 3am, with drop-off points in Penafiel and central Porto.') }}</p>
+    <h3>{{ _('There will be a bus!') }}</h3>
+    <p>{{ _('Buses are available for transport between the church and the venue.') }}</p>
+    <p>{{ _('For the return journey after the party, there will be two times: 00:00 and 03:00. The drop-off points at night are: Penafiel and Porto, at Praça da Liberdade / Aliados.') }}</p>
 
-    <h3>{{ _('Getting from the airport') }}</h3>
+    <h3>{{ _('How to leave the airport?') }}</h3>
+    <p>{{ _('You can leave in three ways:') }}</p>
     <ul>
-        <li>{{ _('Uber — pick-up at the terminal') }}</li>
-        <li>{{ _('Taxi — at the terminal') }}</li>
-        <li>{{ _('Metro — buy a Zone 3 Andante ticket') }}</li>
+        <li><strong>{{ _('Uber:') }}</strong> {{ _('order at the airport entrance.') }}</li>
+        <li><strong>{{ _('Taxi:') }}</strong> {{ _('airport entrance.') }}</li>
+        <li><strong>{{ _('Metro:') }}</strong> {{ _('buy a Cartão Andante Z3.') }}</li>
     </ul>
 
-    <h3>{{ _('Where to stay') }}</h3>
-    <p>{{ _('We recommend staying in the historic city center, near the metro line.') }}</p>
+    <h3>{{ _('Where to stay?') }}</h3>
+    <p>{{ _('In Portugal, you can find hotels and apartments on platforms like Booking or Airbnb.') }}</p>
+    <p>{{ _('We recommend staying in the historic area of the city, near the metro line (Trindade; Bolhão; Campo 24 de Agosto; Heroísmo).') }}</p>
+    <p>{{ _('For the night of the wedding, you can choose to sleep closer to the venue, in the town of Penafiel.') }}</p>
 
-    <h3>{{ _('Good to bring') }}</h3>
-    <p>{{ _('April can be cold and rainy in Portugal — bring a coat and umbrella.') }}</p>
+    <h3>{{ _('Car Rental') }}</h3>
+    <ul>
+        <li>Europcar</li>
+        <li>Hertz</li>
+        <li>Guerin</li>
+    </ul>
+    <p>{{ _('There are also rental services at the airport.') }}</p>
+
+    <h3>{{ _('Recommendations and Information') }}</h3>
+    <ul>
+        <li>{{ _('April is a rainy and cold month in Portugal: bring a coat and an umbrella.') }}</li>
+        <li>{{ _('If you are staying in Porto, we suggest taking an Uber to the church and using the bus provided.') }}</li>
+        <li>
+            {{ _('Please note it is very important to include all the specified information in the RSVP form notes:') }}
+            <ul>
+                <li>{{ _('Allergies, intolerances, or dietary restrictions.') }}</li>
+                <li>{{ _('If you are coming with young children, please indicate their ages.') }}</li>
+                <li>{{ _('Indicate where you will be staying and if you rented a car.') }}</li>
+            </ul>
+        </li>
+    </ul>
 </section>
 
 <section id="regalo">
     <h2>{{ _('Gift & Playlist') }}</h2>
     <div class="gift-grid">
         <div class="gift-card">
+            <div class="info-icon">
+                <img src="{{ url_for('static', filename='images/icons/Regalo.svg') }}" alt="">
+            </div>
             <h3>{{ _('Gift') }}</h3>
-            <p>{{ _('IBAN:') }}</p>
-            <code class="iban">{{ iban }}</code>
+            <div class="bank-details">
+                <p>{{ _('NIB:') }} {{ nib }}</p>
+                <p>{{ _('IBAN:') }} {{ iban }}</p>
+                <p>{{ _('SWIFT:') }} {{ swift }}</p>
+            </div>
         </div>
         <div class="gift-card">
-            <h3>{{ _('Shared playlist') }}</h3>
+            <div class="info-icon">
+                <img src="{{ url_for('static', filename='images/icons/spotify.png') }}" alt="Spotify">
+            </div>
+            <h3>{{ _('Playlist') }}</h3>
             <a class="cta-button" href="{{ playlist_url }}" target="_blank" rel="noopener">
-                {{ _('Add your songs') }}
+                {{ _('Join the part by clicking here.') }}
             </a>
         </div>
     </div>

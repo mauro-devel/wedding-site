@@ -3,15 +3,15 @@
 {% block title %}{{ _('Confirm Guests') }} - {{ _('RSVP') }}{% endblock %}
 
 {% block content %}
-<section>
+<div class="page-card">
     <h1>{{ _('RSVP - Confirm Your Attendance') }}</h1>
 
-    <div class="summary-card" style="max-width: 480px; margin: 0 auto 2rem;">
+    <div class="summary-card">
         <p><strong>{{ _('Invitation Code:') }}</strong> {{ invitation.invitation_code }}</p>
         <p><strong>{{ _('Country:') }}</strong> {{ invitation.country_code }}</p>
     </div>
 
-    <form method="POST" action="{{ url_for('main.rsvp_guests') }}" style="max-width: 640px;">
+    <form method="POST" action="{{ url_for('main.rsvp_guests') }}">
         <h2>{{ _('Guests on this invitation:') }}</h2>
 
         {% for guest in invitation.guests %}
@@ -32,7 +32,7 @@
             {% endif %}
 
             <div class="rsvp-options">
-                <label style="font-weight:600; display:block;">{{ _('Will you attend?') }}</label>
+                <label>{{ _('Will you attend?') }}</label>
                 <label>
                     <input type="radio" name="rsvp_{{ guest.id }}" value="ACCEPTED"
                            class="rsvp-toggle" data-guest="{{ guest.id }}"
@@ -50,59 +50,14 @@
             </div>
 
             <div class="attending-fields" id="attending-fields-{{ guest.id }}" style="display: none;">
-
-                {% if menu_items %}
-                <div class="menu-options">
-                    <label>{{ _('Dietary Preference') }}</label>
-                    {% for item in menu_items %}
-                    <label>
-                        <input type="radio"
-                               name="menu_{{ guest.id }}"
-                               value="{{ item.id }}"
-                               class="menu-toggle"
-                               data-guest="{{ guest.id }}"
-                               data-key="{{ item.menu_key }}"
-                               {% if guest.menu_choice and guest.menu_choice.menu_item_id == item.id %}checked{% endif %}>
-                        {{ item.name(current_locale) }}
-                    </label>
-                    {% endfor %}
-
-                    <div id="menu-other-{{ guest.id }}"
-                         style="display: none; margin-top: 0.5rem;">
-                        <input type="text"
-                               name="menu_other_{{ guest.id }}"
-                               placeholder="{{ _('Please specify') }}"
-                               value="{{ guest.menu_choice.other_specify if guest.menu_choice else '' }}">
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if dietary_restrictions %}
-                <div class="dietary-options">
-                    <label style="display:block;">{{ _('Allergies / Intolerances') }}</label>
-                    {% set guest_restriction_ids = guest.dietary_restrictions|map(attribute='dietary_restriction_id')|list %}
-                    {% for restriction in dietary_restrictions %}
-                    <label>
-                        <input type="checkbox"
-                               name="dietary_{{ guest.id }}"
-                               value="{{ restriction.id }}"
-                               {% if restriction.id in guest_restriction_ids %}checked{% endif %}>
-                        {{ restriction.label(current_locale) }}
-                    </label>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                <div>
-                    <label for="notes_{{ guest.id }}">{{ _('Notes') }}</label>
-                    <p style="font-weight:400; color:#777; font-size:0.9rem; margin-bottom:0.3rem;">
-                        {{ _('Let us know where you are staying, information about children attending, or anything else we should know.') }}
-                    </p>
-                    <textarea id="notes_{{ guest.id }}"
-                              name="notes_{{ guest.id }}"
-                              rows="3"
-                              placeholder="{{ _('E.g. staying at Hotel X, bringing 2 children (ages 4 and 7)...') }}">{{ guest.notes or '' }}</textarea>
-                </div>
+                <label for="notes_{{ guest.id }}">{{ _('Notes') }}</label>
+                <p class="field-hint">
+                    {{ _('Please include any dietary restrictions or allergies, whether you are bringing children (and their ages), where you are staying, and anything else we should know.') }}
+                </p>
+                <textarea id="notes_{{ guest.id }}"
+                          name="notes_{{ guest.id }}"
+                          rows="4"
+                          placeholder="{{ _('E.g. vegetarian, allergic to nuts, staying at Hotel X, bringing 2 children (ages 4 and 7)...') }}">{{ guest.notes or '' }}</textarea>
             </div>
         </div>
         {% endfor %}
@@ -116,10 +71,10 @@
         </button>
     </form>
 
-    <p style="margin-top: 2rem; text-align: center;">
+    <p style="margin-top: 1.5rem; text-align: center;">
         <a href="{{ url_for('main.rsvp') }}">← {{ _('Enter a different code') }}</a>
     </p>
-</section>
+</div>
 {% endblock %}
 
 {% block scripts %}
@@ -132,24 +87,10 @@
         }
     }
 
-    function updateOtherField(guestId) {
-        var selected = document.querySelector('.menu-toggle[data-guest="' + guestId + '"]:checked');
-        var otherBox = document.getElementById('menu-other-' + guestId);
-        if (otherBox) {
-            otherBox.style.display = (selected && selected.dataset.key === 'OTHER') ? 'block' : 'none';
-        }
-    }
-
     document.querySelectorAll('.rsvp-toggle').forEach(function (input) {
         var guestId = input.dataset.guest;
         input.addEventListener('change', function () { updateAttendingFields(guestId); });
         updateAttendingFields(guestId);
-    });
-
-    document.querySelectorAll('.menu-toggle').forEach(function (input) {
-        var guestId = input.dataset.guest;
-        input.addEventListener('change', function () { updateOtherField(guestId); });
-        updateOtherField(guestId);
     });
 </script>
 {% endblock %}

@@ -7,7 +7,7 @@
 body {
     font-family: 'Georgia', serif;
     background-color: #f2ede4;
-    color: #2c2c2c;
+    color: #3d1700;
     padding: 1.5rem;
 }
 
@@ -25,7 +25,7 @@ body {
     border-radius: 999px;
     padding: 0.4rem 1.1rem;
     text-decoration: none;
-    color: #2c2c2c;
+    color: #3d1700;
     font-size: 0.85rem;
     letter-spacing: 0.02em;
     transition: background 0.2s;
@@ -37,7 +37,7 @@ body {
 }
 
 .lang-pill.active {
-    background: #2c2c2c;
+    background: #3d1700;
     color: #fff;
 }
 
@@ -59,12 +59,15 @@ body {
     position: relative;
     max-width: 950px;
     margin: 0 auto 3rem;
-    min-height: 520px;
+    /* min-height: 520px; */
+    aspect-ratio: 950 / 520;
     overflow: hidden;
     background: linear-gradient(180deg, #fbf6ef 0%, #f7f1e8 100%);
     border-radius: 14px;
     padding: 1.25rem 0.75rem 2rem;
     box-shadow: 0 18px 40px rgba(28,28,28,0.08);
+    background-image: url('../images/flowers/background_flowers.png');
+    background-size: cover;
 }
 
 .hero {
@@ -78,7 +81,7 @@ body {
     font-size: 2.75rem;
     font-weight: 400;
     letter-spacing: 0.05em;
-    color: #2c2c2c;
+    color: #3d1700;
     margin-bottom: 1rem;
 }
 
@@ -91,10 +94,10 @@ body {
 .cta-button {
     display: inline-block;
     padding: 0.6rem 1.75rem;
-    border: 1px solid #2c2c2c;
+    border: 1px solid #3d1700;
     border-radius: 999px;
     text-decoration: none;
-    color: #2c2c2c;
+    color: #3d1700;
     font-size: 0.9rem;
     letter-spacing: 0.05em;
     transition: background 0.2s;
@@ -105,7 +108,7 @@ body {
 }
 
 .cta-button.primary {
-    background: #2c2c2c;
+    background: #3d1700;
     color: #fff;
 }
 
@@ -134,25 +137,47 @@ body {
 }
 
 /* Loose wreath: place flowers around the invite card */
-.flower-1 { top: -30px; left: -40px; width: 150px; transform: rotate(-10deg); }
-.flower-2 { top: -10px; left: 120px; width: 110px; transform: rotate(-8deg); }
-.flower-3 { top: 10px; left: 260px; width: 90px; transform: rotate(5deg); }
-.flower-4 { top: -40px; right: -30px; width: 170px; transform: rotate(12deg); }
-.flower-5 { top: 120px; left: -50px; width: 120px; transform: rotate(-20deg); }
-.flower-6 { top: 140px; right: 30px; width: 140px; transform: rotate(25deg); }
-.flower-7 { top: 220px; left: 40px; width: 100px; transform: rotate(12deg); }
-.flower-8 { top: 240px; right: 60px; width: 130px; transform: rotate(-12deg); }
-.flower-9 { bottom: 110px; left: -60px; width: 180px; transform: rotate(8deg); }
+/* .flower-1 { bottom: -50px; left: -50px; width: 200px; transform: rotate(-10deg); }
+.flower-2 { top: 300px; left: 750px; width: 210px; transform: rotate(-120deg);  }
+.flower-3 { top: 130px; left: 750px; width: 120px; transform: rotate(5deg); }
+.flower-4 { top: 150px; right: -30px; width: 170px; transform: rotate(12deg); }
+.flower-5 { top: 200px; left: 700px; width: 150px; transform: rotate(-20deg); }
+.flower-6 { bottom: 35px; left: -20px; width: 140px; transform: rotate(20deg);  }
+.flower-7 { top: -30px; left: -30px; width: 130px; transform: rotate(-20deg); }
+.flower-8 { top: -10px; right: 60px; width: 150px; transform: rotate(-150deg); }
+.flower-9 { bottom: 170px; left: 130px; width: 180px; transform: rotate(8deg); }
 .flower-10 { bottom: 60px; left: 140px; width: 120px; transform: rotate(-6deg); }
-.flower-11 { bottom: 40px; right: 20px; width: 160px; transform: rotate(6deg); }
-.flower-12 { bottom: 100px; left: -50px; width: 200px; transform: rotate(-10deg); }
-.flower-13 { bottom: -20px; right: -40px; width: 220px; transform: rotate(10deg); }
-.flower-14 { top: 60px; left: -10px; width: 90px; transform: rotate(-30deg); }
-.flower-15 { top: 60px; right: -10px; width: 90px; transform: rotate(30deg); }
-.flower-16 { top: 300px; left: 240px; width: 110px; transform: rotate(8deg); }
+.flower-11 { bottom: 130px; right: 20px; width: 160px; transform: scaleX(-1) rotate(-6deg); }
+.flower-12 { bottom: 100px; left: -30px; width: 200px; transform: rotate(-10deg); }
+.flower-13 { bottom: 320px; right: 620px; width: 220px; transform: rotate(10deg); }
+.flower-14 { top: 400px; left: 550px; width: 120px; transform: rotate(390deg); }
+.flower-15 { top: 10px; right: -10px; width: 150px; transform: rotate(270deg); }
+.flower-16 { top: 350px; left: 200px; width: 240px; transform: rotate(8deg); }
 .flower-17 { top: 320px; right: 180px; width: 110px; transform: rotate(-8deg); }
-.flower-18 { left: 50%; top: -80px; transform: translateX(-50%) rotate(0deg); width: 160px; }
-.flower-19 { left: 12%; bottom: -80px; transform: rotate(-20deg); width: 140px; }
+.flower-18 { bottom: 100px; left: -50px; width: 200px; transform: rotate(-10deg); }
+.flower-19 { top: 180px; left: 60px; transform: rotate(-20deg); width: 140px; }
+.flower-20 { right: 12%; bottom: -80px; transform: rotate(20deg); width: 140px; }
+.flower-21 { left: 50%; bottom: -40px; transform: translateX(-50%) rotate(6deg); width: 120px; } */
+
+.flower-1 { bottom: -50px; left: -50px; width: 200px; transform: rotate(-10deg); }
+.flower-2 { top: 300px; left: 750px; width: 210px; transform: rotate(-120deg);  }
+.flower-3 { top: 130px; left: 750px; width: 120px; transform: rotate(5deg); }
+.flower-4 { top: 150px; right: -30px; width: 170px; transform: rotate(12deg); }
+.flower-5 { top: 200px; left: 700px; width: 150px; transform: rotate(-20deg); }
+.flower-6 { bottom: 35px; left: -20px; width: 140px; transform: rotate(20deg);  }
+.flower-7 { top: -30px; left: -30px; width: 130px; transform: rotate(-20deg); }
+.flower-8 { top: -10px; right: 60px; width: 150px; transform: rotate(-150deg); }
+.flower-9 { bottom: 170px; left: 130px; width: 180px; transform: rotate(8deg); }
+.flower-10 { bottom: 60px; left: 140px; width: 120px; transform: rotate(-6deg); }
+.flower-11 { bottom: 130px; right: 20px; width: 160px; transform: scaleX(-1) rotate(-6deg); }
+.flower-12 { bottom: 100px; left: -30px; width: 200px; transform: rotate(-10deg); }
+.flower-13 { bottom: 320px; right: 620px; width: 220px; transform: rotate(10deg); }
+.flower-14 { top: 400px; left: 550px; width: 120px; transform: rotate(390deg); }
+.flower-15 { top: 10px; right: -10px; width: 150px; transform: rotate(270deg); }
+.flower-16 { top: 350px; left: 200px; width: 240px; transform: rotate(8deg); }
+.flower-17 { top: 320px; right: 180px; width: 110px; transform: rotate(-8deg); }
+/*.flower-18 { bottom: 100px; left: -50px; width: 200px; transform: rotate(-10deg); }*/
+.flower-19 { top: 60px; right: 40px; width: 150px; transform: rotate(-15deg); }
 .flower-20 { right: 12%; bottom: -80px; transform: rotate(20deg); width: 140px; }
 .flower-21 { left: 50%; bottom: -40px; transform: translateX(-50%) rotate(6deg); width: 120px; }
 
@@ -161,7 +186,9 @@ body {
 .countdown {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
 }
 
 .countdown-unit {
@@ -172,7 +199,7 @@ body {
     display: block;
     font-size: 2.2rem;
     font-weight: 400;
-    color: #2c2c2c;
+    color: #3d1700;
 }
 
 .countdown-unit label {
@@ -211,19 +238,81 @@ section h3 {
 .info-grid, .gift-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .info-card, .gift-card {
-    background: #fff;
-    border: 1px solid #e2ddd2;
+    background: linear-gradient(180deg, #fbf6ef 0%, #f7f1e8 100%);
+    border: 1px solid #e8e0d0;
     border-radius: 8px;
     padding: 1.5rem;
-    text-align: center;
+    box-shadow: 0 8px 20px rgba(28,28,28,0.05);
 }
 
 .info-card a, .gift-card a {
-    color: #2c2c2c;
+    color: #3d1700;
+}
+
+.info-card {
+    text-align: center;
+}
+
+.info-icon {
+    position: relative;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.info-icon img {
+    max-height: 130px;
+    max-width: 100%;
+    width: auto;
+}
+
+.info-icon--party {
+    position: relative;
+}
+
+.info-icon--party .icon-primary {
+    max-height: 95px;
+    width: auto;
+}
+
+.info-icon--party .icon-accent {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    max-height: 55px;
+    width: auto;
+    max-width: none;
+    transform: translateX(-90%) rotate(-8deg);
+}
+
+.info-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 0 0.35rem;
+}
+
+.info-card p {
+    margin: 0.15rem 0;
+    font-size: 0.95rem;
+}
+
+.info-card p a {
+    color: #3d1700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.info-card .info-meta {
+    color: #555;
+    font-size: 0.85rem;
+
 }
 
 .info-extra ul {
@@ -236,31 +325,66 @@ section h3 {
     color: #444;
 }
 
-.iban {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: #f2ede4;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    letter-spacing: 0.03em;
+.gift-card .info-icon {
+    height: 110px;
+    margin-bottom: 1rem;
 }
 
-/* --- RSVP forms (used on rsvp.html / rsvp_guests.html / rsvp_confirmation.html) --- */
+.gift-card .info-icon img {
+    max-height: 110px;
+    max-width: 100%;
+    width: auto;
+}
+
+.gift-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0 0 0.35rem;
+}
+
+.bank-details {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    color: #444;
+}
+
+.bank-details p {
+    margin: 0.15rem 0;
+}
+
+.gift-card .cta-button {
+    margin-top: 0.5rem;
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    border: none;
+    background: none;
+    padding: 0;
+    color: #3d1700;
+    font-size: 0.9rem;
+}
+
+.gift-card .cta-button:hover {
+    background: none;
+    color: #555;
+}
+
 form {
     max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 0 auto;
+/*     padding: 2rem;
     background: #fff;
     border: 1px solid #e2ddd2;
-    border-radius: 8px;
+    border-radius: 8px; */
 }
 
 label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #2c2c2c;
+    color: #3d1700;
 }
 
 input[type="text"] {
@@ -279,7 +403,7 @@ input[type="text"]:focus {
 }
 
 button {
-    background: #2c2c2c;
+    background: #3d1700;
     color: white;
     padding: 0.75rem 2rem;
     border: none;
@@ -293,6 +417,147 @@ button {
 
 button:hover {
     background: #444;
+}
+
+/* ============ RSVP FLOW PAGES ============ */
+.page-card {
+    max-width: 640px;
+    margin: 2rem auto 3rem;
+    background: linear-gradient(180deg, #fbf6ef 0%, #f7f1e8 100%);
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 18px 40px rgba(28,28,28,0.08);
+}
+
+.page-card h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #3d1700;
+}
+
+.page-card > p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.page-card h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    color: #3d1700;
+}
+
+.page-card form {
+    max-width: 100%;
+}
+
+.summary-card {
+    background: #fbf7f0;
+    border: 1px solid #e8e0d0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 0 auto 2rem;
+}
+
+.summary-card p {
+    margin: 0.2rem 0;
+}
+
+.summary-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.guest-card {
+    background: #fbf7f0;
+    border: 1px solid #e8e0d0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.25rem 0;
+    text-align: left;
+}
+
+.guest-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #3d1700;
+}
+
+.current-response {
+    background: #f2ede4;
+    border-radius: 6px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.rsvp-options > label:first-child {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #3d1700;
+}
+
+.rsvp-options label {
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-right: 1.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.rsvp-options input[type="radio"] {
+    accent-color: #3d1700;
+    width: 1.05rem;
+    height: 1.05rem;
+    cursor: pointer;
+}
+
+.attending-fields {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed #d8cfbd;
+}
+
+.attending-fields label {
+    font-weight: 600;
+    color: #3d1700;
+    margin-bottom: 0.3rem;
+}
+
+.attending-fields .field-hint {
+    font-weight: 400;
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.attending-fields textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    transition: border-color 0.3s;
+    background: #ffffff;
+}
+
+.attending-fields textarea:focus {
+    outline: none;
+    border-color: #d4af37;
 }
 
 /* --- Flash messages --- */
@@ -323,4 +588,14 @@ footer {
     .flower { width: 80px !important; opacity: 0.85; }
     .countdown { gap: 1rem; }
     .countdown-unit span { font-size: 1.6rem; }
+    .page-card {
+        padding: 1.5rem 1.25rem;
+        margin: 1rem auto 2rem;
+        border-radius: 10px;
+    }
+    .page-card h1 { font-size: 1.7rem; }
+    .guest-card { padding: 1.1rem; }
+    .rsvp-options label { display: flex; margin-right: 0; }
+    .summary-card { padding: 1rem 1.25rem; }
+    .pill { font-size: 0.78rem; padding: 0.35rem 0.85rem; }
 }
