@@ -365,3 +365,9 @@ msgstr "Enviar confirmação"
 #: app/templates/rsvp_guests.html
 msgid "Enter a different code"
 msgstr "Introduzir outro código"
+
+msgid "Please include any dietary restrictions or allergies, whether you are bringing children (and their ages), where you are staying, and anything else we should know."
+msgstr "Por favor, incluam quaisquer restrições alimentares ou alergias, se viajarem com crianças (e as suas idades), onde ficarão alojados e qualquer outra informação que devamos saber."
+
+msgid "E.g. vegetarian, allergic to nuts, staying at Hotel X, bringing 2 children (ages 4 and 7)..."
+msgstr "Exemplo: vegetariano(a), alérgico(a) a nozes, hospedado(a) no Hotel X, viajando com 2 crianças (de 4 e 7 anos)..."

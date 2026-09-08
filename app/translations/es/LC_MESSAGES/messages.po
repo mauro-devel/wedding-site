@@ -277,3 +277,9 @@ msgstr "Enviar confirmación"
 
 msgid "Enter a different code"
 msgstr "Introducir otro código"
+
+msgid "Please include any dietary restrictions or allergies, whether you are bringing children (and their ages), where you are staying, and anything else we should know."
+msgstr "Por favor, incluye cualquier restricción alimentaria o alergia, si viajas con niños (y sus edades), dónde se alojarán y cualquier otra cosa que debamos saber."
+
+msgid "E.g. vegetarian, allergic to nuts, staying at Hotel X, bringing 2 children (ages 4 and 7)..."
+msgstr "Por ejemplo: vegetariano/a, alérgico/a a los frutos secos, se aloja en el Hotel X, viaja con dos niños (de 4 y 7 años)..."
