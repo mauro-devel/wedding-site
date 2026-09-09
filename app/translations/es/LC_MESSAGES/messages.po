@@ -283,3 +283,51 @@ msgstr "Por favor, incluye cualquier restricción alimentaria o alergia, si viaj
 
 msgid "E.g. vegetarian, allergic to nuts, staying at Hotel X, bringing 2 children (ages 4 and 7)..."
 msgstr "Por ejemplo: vegetariano/a, alérgico/a a los frutos secos, se aloja en el Hotel X, viaja con dos niños (de 4 y 7 años)..."
+
+msgid "In Portugal, you can find hotels and apartments on platforms like Booking or Airbnb, but we especially recommend the following options:"
+msgstr "En Portugal puedes encontrar hoteles y apartamentos en plataformas como Booking o Airbnb, pero te recomendamos especialmente las siguientes opciones:"
+
+msgid "per night depending on dates (parking available)"
+msgstr "la noche según las fechas (tiene parqueadero)"
+
+msgid "per night (parking available)"
+msgstr "la noche (tiene parqueadero)"
+
+msgid "per night depending on dates (no parking)"
+msgstr "la noche según las fechas (no tiene parqueadero)"
+
+msgid "per night (no parking)"
+msgstr "la noche (no tiene parqueadero)"
+
+msgid "Near Porto:"
+msgstr "Cerca de Oporto:"
+
+msgid "For the night of the wedding, you can choose to sleep closer to the venue, in the town of Penafiel:"
+msgstr "Para la noche de la boda, puedes optar por dormir más cerca de la fiesta, en la ciudad de Penafiel:"
+
+msgid "If you happen to be staying more days and want to visit Viseu, the city where we live, you could also stay at:"
+msgstr "Si por casualidad vienes más días y quieres visitar Viseu, la ciudad donde vivimos, puedes quedarte en:"
+
+msgid "If you choose another hotel or apartment in Porto, we recommend staying near the metro line mentioned above."
+msgstr "Si optas por escoger otro hotel o apartamento en Oporto, te recomendamos que te alojes cerca de la línea de metro mencionada arriba."
+
+msgid "If you book in advance and are arriving by plane, select Porto Francisco de Sá Carneiro Airport as your pickup point. You can also do this at the airport when you arrive, since all these companies have a desk there. If you are arriving another way, choose the office closest to your hotel. We recommend Guerin or Europcar."
+msgstr "Si lo alquilas con anticipación y llegas en avión, selecciona el Aeropuerto de Oporto Francisco de Sá Carneiro como punto de recogida. También lo puedes hacer en el aeropuerto cuando llegues, ya que todas estas empresas tienen mostrador allí. Si llegas por otra vía, elige la oficina que te quede más cerca del hotel. Te recomendamos Guerin o Europcar."
+
+msgid "Parking near the church"
+msgstr "Estacionamiento cerca de la iglesia"
+
+msgid "There are two parking options near the church:"
+msgstr "Hay dos estacionamientos cerca de la iglesia:"
+
+msgid "Duque de Loulé car park"
+msgstr "Estacionamento Duque de Loulé"
+
+msgid "Batalha car park"
+msgstr "Estacionamento Batalha"
+
+msgid "The most important thing for us is that you can be there with us, but if you would like to give us a gift, we would appreciate a bank transfer."
+msgstr "Para nosotros lo más importante es que puedan acompañarnos, pero si desean darnos un regalo, apreciamos que sea a través de una transferencia bancaria."
+
+msgid "Add the songs you would like to hear and dance to at the wedding party by clicking here!"
+msgstr "¡Agrega las canciones que te gustaría escuchar y bailar en la fiesta de la boda haciendo click aquí!"

@@ -371,3 +371,51 @@ msgstr "Por favor, incluam quaisquer restrições alimentares ou alergias, se vi
 
 msgid "E.g. vegetarian, allergic to nuts, staying at Hotel X, bringing 2 children (ages 4 and 7)..."
 msgstr "Exemplo: vegetariano(a), alérgico(a) a nozes, hospedado(a) no Hotel X, viajando com 2 crianças (de 4 e 7 anos)..."
+
+msgid "In Portugal, you can find hotels and apartments on platforms like Booking or Airbnb, but we especially recommend the following options:"
+msgstr "Em Portugal podes encontrar hotéis e apartamentos em plataformas como Booking ou Airbnb, mas recomendamos especialmente as seguintes opções:"
+
+msgid "per night depending on dates (parking available)"
+msgstr "por noite consoante as datas (tem estacionamento)"
+
+msgid "per night (parking available)"
+msgstr "por noite (tem estacionamento)"
+
+msgid "per night depending on dates (no parking)"
+msgstr "por noite consoante as datas (não tem estacionamento)"
+
+msgid "per night (no parking)"
+msgstr "por noite (não tem estacionamento)"
+
+msgid "Near Porto:"
+msgstr "Perto do Porto:"
+
+msgid "For the night of the wedding, you can choose to sleep closer to the venue, in the town of Penafiel:"
+msgstr "Para a noite do casamento, podes optar por dormir mais perto da festa, na cidade de Penafiel:"
+
+msgid "If you happen to be staying more days and want to visit Viseu, the city where we live, you could also stay at:"
+msgstr "Se por acaso vieres mais dias e quiseres conhecer Viseu, a cidade onde moramos, podes também ficar em:"
+
+msgid "If you choose another hotel or apartment in Porto, we recommend staying near the metro line mentioned above."
+msgstr "Se escolheres outro hotel ou apartamento no Porto, recomendamos ficares perto da linha de metro mencionada acima."
+
+msgid "If you book in advance and are arriving by plane, select Porto Francisco de Sá Carneiro Airport as your pickup point. You can also do this at the airport when you arrive, since all these companies have a desk there. If you are arriving another way, choose the office closest to your hotel. We recommend Guerin or Europcar."
+msgstr "Se alugares com antecedência e chegares de avião, seleciona o Aeroporto do Porto Francisco de Sá Carneiro como local de recolha. Também podes fazê-lo no aeroporto quando chegares, já que todas estas empresas têm balcão. Se chegares por outra via, escolhe o escritório mais próximo do teu hotel. Recomendamos a Guerin ou a Europcar."
+
+msgid "Parking near the church"
+msgstr "Estacionamento perto da igreja"
+
+msgid "There are two parking options near the church:"
+msgstr "Há dois estacionamentos perto da igreja:"
+
+msgid "Duque de Loulé car park"
+msgstr "Estacionamento Duque de Loulé"
+
+msgid "Batalha car park"
+msgstr "Estacionamento Batalha"
+
+msgid "The most important thing for us is that you can be there with us, but if you would like to give us a gift, we would appreciate a bank transfer."
+msgstr "Para nós, o mais importante é que possas estar connosco, mas se quiseres oferecer-nos uma prenda, agradecemos que seja através de transferência bancária."
+
+msgid "Add the songs you would like to hear and dance to at the wedding party by clicking here!"
+msgstr "Adiciona, clicando aqui, as músicas que gostarias de ouvir e dançar na festa do casamento!"

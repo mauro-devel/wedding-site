@@ -81,17 +81,40 @@
     </ul>
 
     <h3>{{ _('Where to stay?') }}</h3>
-    <p>{{ _('In Portugal, you can find hotels and apartments on platforms like Booking or Airbnb.') }}</p>
+    <p>{{ _('In Portugal, you can find hotels and apartments on platforms like Booking or Airbnb, but we especially recommend the following options:') }}</p>
     <p>{{ _('We recommend staying in the historic area of the city, near the metro line (Trindade; Bolhão; Campo 24 de Agosto; Heroísmo).') }}</p>
-    <p>{{ _('For the night of the wedding, you can choose to sleep closer to the venue, in the town of Penafiel.') }}</p>
+
+    <p><strong>{{ _('Near Porto:') }}</strong></p>
+    <ul>
+        <li><a href="https://www.eurostarshotels.com.pt/eurostars-porto-douro.html" target="_blank" rel="noopener">Eurostars Porto Douro, 4 ⭐️ — €80–120 {{ _('per night depending on dates (parking available)') }}</a></li>
+        <li><a href="https://www.booking.com/Share-WJ1ypx" target="_blank" rel="noopener">Oporto Maison Entreparedes</a> — €80–120 {{ _('per night depending on dates (parking available)') }}</li>
+        <li><a href="https://www.booking.com/Share-JGKPcp" target="_blank" rel="noopener">HF Ipanema Porto, 4 ⭐️</a> — €80–90 {{ _('per night depending on dates (parking available)') }}</li>
+        <li><a href="https://www.booking.com/Share-etZT1F" target="_blank" rel="noopener">HF Tuela Porto, 3 ⭐️</a> — €70–80 {{ _('per night depending on dates (parking available)') }}</li>
+        <li><a href="https://www.booking.com/Share-etZT1F" target="_blank" rel="noopener">BNApartments Rio</a> — €60–100 {{ _('per night depending on dates (parking available)') }}</li>
+    </ul>
+
+    <p>{{ _('For the night of the wedding, you can choose to sleep closer to the venue, in the town of Penafiel:') }}</p>
+    <ul>
+        <li><a href="https://www.booking.com/Share-0MgFmv" target="_blank" rel="noopener">Penafiel Park Hotel & Spa, 4 ⭐️</a> — €180 {{ _('per night (parking available)') }}</li>
+        <li><a href="https://www.booking.com/Share-5kCjan" target="_blank" rel="noopener">Casa Matriz Séc. XVI</a> — €60–70 {{ _('per night depending on dates (no parking)') }}</li>
+    </ul>
+
+    <p>{{ _('If you happen to be staying more days and want to visit Viseu, the city where we live, you could also stay at:') }}</p>
+    <ul>
+        <li><a href="https://www.booking.com/Share-7FdCi8" target="_blank" rel="noopener">Pousada de Viseu, 4 ⭐️</a> — €115–120 {{ _('per night depending on dates (parking available)') }}</li>
+        <li><a href="https://www.booking.com/Share-NDCtfy" target="_blank" rel="noopener">Avenida Boutique Hotel, 4 ⭐️</a> — €115–130 {{ _('per night depending on dates (no parking)') }}</li>
+        <li><a href="https://www.booking.com/Share-F1WANzh" target="_blank" rel="noopener">Montebelo Palácio dos Melos, 4 ⭐️</a> — €85–100 {{ _('per night depending on dates (no parking)') }}</li>
+        <li><a href="https://www.booking.com/Share-scH9t4A" target="_blank" rel="noopener">Be My Guest Jardim das Mães</a> — €75–80 {{ _('per night (no parking)') }}</li>
+    </ul>
+
+    <p>{{ _('If you choose another hotel or apartment in Porto, we recommend staying near the metro line mentioned above.') }}</p>
 
     <h3>{{ _('Car Rental') }}</h3>
-    <ul>
-        <li>Europcar</li>
-        <li>Hertz</li>
-        <li>Guerin</li>
+    <ul><li><a href="https://www.europcar.pt/pt-pt?xtor=AL-3780&utm_source=Awin_1114442_https%3A%2F%2Fwww.click2commission.com%2F_PT&utm_medium=affiliate&sv1=affiliate&sv_campaign_id=1114442&awc=10141_1788852846_f0169496cf1b6bff1ade60eaf57fa612&utm_content=textLink&gad_source=1" target="_blank" rel="noopener">Europcar</a></li>
+        <li><a href="https://www.guerin.pt/pt/campanhas/campanha-mensal/?utm_medium=search&utm_source=google&utm_campaign=caetsu_grc_brand_per_always-on_brand-pt-ao_01.26_pt_lp_mob_26161-pt-per&utm_content=text_brand_pros_kw&utm_term=guerin&gclsrc=aw.ds&gad_source=1&gad_campaignid=23405963892&gbraid=0AAAAAoz96GBj23jbOkMGsIdSpYOXLD_-t&gclid=Cj0KCQjw5P7UBhDaARIsAOSlS1Pmk8--T-F-UNajnHTbIxoDh8veZO-MoLGFezvHTpfMRfy0hhyhXhsaAjPHEALw_wcB" target="_blank" rel="noopener">Guerin</a></li>
+        <li><a href="https://www.hertz.pt/rentacar/reservation/" target="_blank" rel="noopener">Hertz</a></li>
     </ul>
-    <p>{{ _('There are also rental services at the airport.') }}</p>
+    <p>{{ _('If you book in advance and are arriving by plane, select Porto Francisco de Sá Carneiro Airport as your pickup point. You can also do this at the airport when you arrive, since all these companies have a desk there. If you are arriving another way, choose the office closest to your hotel. We recommend Guerin or Europcar.') }}</p>
 
     <h3>{{ _('Recommendations and Information') }}</h3>
     <ul>
@@ -116,6 +139,8 @@
                 <img src="{{ url_for('static', filename='images/icons/Regalo.svg') }}" alt="">
             </div>
             <h3>{{ _('Gift') }}</h3>
+            <p>{{ _('The most important thing for us is that you can be there with us, but if you would like to give us a gift, we would appreciate a bank transfer.') }}</p>
+             <div class="bank-details">
             <div class="bank-details">
                 <p>{{ _('NIB:') }} {{ nib }}</p>
                 <p>{{ _('IBAN:') }} {{ iban }}</p>
@@ -128,7 +153,9 @@
             </div>
             <h3>{{ _('Playlist') }}</h3>
             <a class="cta-button" href="{{ playlist_url }}" target="_blank" rel="noopener">
-                {{ _('Join the part by clicking here.') }}
+                {{ _('Add the songs you would like to hear and dance to at the wedding party by clicking here!') }}
+             </a>
+         </div>
             </a>
         </div>
     </div>
