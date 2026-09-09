@@ -18,7 +18,7 @@ def load_final_guests(config_name='production'):
     app = create_app(config_name)
     db_uri = app.config['SQLALCHEMY_DATABASE_URI']
 
-    if not db_uri.startswith('sqlite:///'):
+    if not db_uri.startswith('sqlite:'):
         print(f"❌ This script only supports SQLite. Got: {db_uri}")
         sys.exit(1)
 

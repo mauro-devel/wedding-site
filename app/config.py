@@ -35,5 +35,5 @@ class DevelopmentConfig(Config):
 class ProductionConfig(Config):
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        f'sqlite:///{BASE_DIR / "data" / "wedding.db"}'
+        f'sqlite:///{BASE_DIR / "wedding.db"}'
     SECRET_KEY = os.environ.get('SECRET_KEY')  # Must be set in production
