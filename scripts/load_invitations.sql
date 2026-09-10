@@ -11,6 +11,7 @@ INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (1
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (11, 'KLEI3806', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (12, 'ECHE8913', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (13, 'ROCH2751', 'ES', DATETIME('now'));
+INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (14, 'ARI1789', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (15, 'HERN2712', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (16, 'HERN6503', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (17, 'LIBE6096', 'ES', DATETIME('now'));
@@ -62,6 +63,12 @@ INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (6
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (63, 'ACOS5439', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (64, 'FELI2584', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (65, 'PERE9867', 'ES', DATETIME('now'));
+INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (66, 'PERE9868', 'ES', DATETIME('now'));
+INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (67, 'PERE9869', 'ES', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (68, 'RO9871', 'PT', DATETIME('now'));
+INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (69, 'RO9834', 'ES', DATETIME('now'));
+INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (70, 'FER9824', 'PT', DATETIME('now'));
+INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (71, 'VAN7895', 'PT', DATETIME('now'));
+INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (72, 'CAR7112', 'PT', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (73, 'FERPE1239', 'PT', DATETIME('now'));
 INSERT INTO invitation (id, invitation_code, country_code, created_at) VALUES (74, 'TEST1234', 'ES', DATETIME('now'));

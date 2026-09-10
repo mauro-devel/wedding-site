@@ -31,6 +31,7 @@ INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (12, 'Laura Juliana ', 'Guerra Niño', NULL, 0, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (13, 'Angelica ', 'Rocha Farfan', NULL, 1, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (13, 'Diego Fernando', 'Montenegro Forero', NULL, 0, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (14, 'Alfonso ', 'Arias', NULL, 1, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (15, 'Ivonne', 'Hernández', NULL, 1, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (15, 'Carlos', 'Martínez', NULL, 0, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (15, 'Carlos Andrés', 'Martínez Hernández', NULL, 0, 0, NULL);
@@ -129,8 +130,19 @@ INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (63, 'Yane ', 'Acosta ', NULL, 0, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (64, 'Daniela ', 'Feliciaggi', NULL, 1, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (65, 'Maria Fernanda ', 'Pereda', NULL, 1, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (66, 'Klaus ', 'Hartfiel', NULL, 1, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (67, 'Irina ', 'Capriles ', NULL, 0, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (68, 'Mariana', 'Rodrigues', NULL, 1, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (69, 'Pedro ', 'Rodrigues', NULL, 0, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (68, 'David', 'Rocchi', NULL, 0, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (70, 'Mario Rui', 'Ferreira', NULL, 1, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (70, 'Conceição', 'Ferreira', NULL, 0, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (71, 'Albertina', 'Van-Trier', NULL, 1, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (71, 'Convidado ', 'Adicional ', NULL, 0, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (72, 'António ', 'Carvalho', NULL, 1, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (72, 'Helia', 'Faria', NULL, 0, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (72, 'Sara', 'Faria Carvalho', NULL, 0, 0, NULL);
+INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (72, 'Sofia', 'Faria Carvalho', NULL, 0, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (73, 'Tiago ', 'Ferraz', NULL, 1, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (73, 'Susana', 'Pereira ', NULL, 0, 0, NULL);
 INSERT INTO guest (invitation_id, first_name, last_name, email, is_primary_guest, is_vegetarian, notes) VALUES (74, 'Mauricio', 'Mejia', NULL, 1, 0, NULL);
