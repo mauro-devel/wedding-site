@@ -327,7 +327,7 @@ msgid "Batalha car park"
 msgstr "Estacionamento Batalha"
 
 msgid "The most important thing for us is that you can be there with us, but if you would like to give us a gift, we would appreciate a bank transfer."
-msgstr "Para nosotros lo más importante es que puedan acompañarnos, pero si desean darnos un regalo, apreciamos que sea a través de una transferencia bancaria."
+msgstr "Para nosotros lo más importante es que puedan acompañarnos, pero si desean darnos un regalo, apreciamos que sea a través de dinero en efectivo."
 
 msgid "Add the songs you would like to hear and dance to at the wedding party by clicking here!"
 msgstr "¡Agrega las canciones que te gustaría escuchar y bailar en la fiesta de la boda haciendo click aquí!"

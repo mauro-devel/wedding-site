@@ -138,19 +138,19 @@
             <div class="info-icon">
                 <img src="{{ url_for('static', filename='images/icons/Regalo.svg') }}" alt="">
             </div>
-            <h3>{{ _('Gift') }}</h3>
+            <center><h3>{{ _('Gift') }}</h3></center>
             <p class="gift-intro">{{ _('The most important thing for us is that you can be there with us, but if you would like to give us a gift, we would appreciate a bank transfer.') }}</p>
-            <div class="bank-details">
+            <!-- <div class="bank-details">
                 <p>{{ _('NIB:') }} {{ nib }}</p>
                 <p>{{ _('IBAN:') }} {{ iban }}</p>
                 <p>{{ _('SWIFT:') }} {{ swift }}</p>
-            </div>
+            </div> -->
         </div>
         <div class="gift-card">
             <div class="info-icon">
                 <img src="{{ url_for('static', filename='images/icons/spotify.png') }}" alt="Spotify">
             </div>
-            <h3>{{ _('Playlist') }}</h3>
+            <center><h3>{{ _('Playlist') }}</h3></center>
             <a class="cta-button" href="{{ playlist_url }}" target="_blank" rel="noopener">
                 {{ _('Add the songs you would like to hear and dance to at the wedding party by clicking here!') }}
             </a>
